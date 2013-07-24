@@ -1,12 +1,12 @@
-    <header class="site-header" id="site-header">
+<!--    <header class="site-header" id="site-header">
         <div class="container">
-            <h1 class="site-header-logo">
-                <a href="#"><img src="<?php print $base_path.path_to_theme(); ?>/assets/images/logo-shadow.png" alt="Student Kick Off" /></a>
-            </h1>
+            <h1 class="site-header-logo">-->
+<!--                <a href="#"><img src="--><?php //print $base_path.path_to_theme(); ?><!--/assets/images/logo-shadow.png" alt="Student Kick Off" /></a>-->
+<!--            </h1>
             <nav>
                 <ul class="horizontal-navigation site-navigation">
-                    <!-- </li> and starting <li> have to be on the same line
-                         because display:inline-block will add whitespace otherwise -->
+                     </li> and starting <li> have to be on the same line
+                         because display:inline-block will add whitespace otherwise 
                     <li class="current horizontal-navigation-item site-navigation-item">
                         <a href="index.html" title="" class="current site-navigation-home">Home</a>
                     </li><li class="horizontal-navigation-item site-navigation-item">
@@ -21,7 +21,7 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    </header>-->
 
     <section class="picture-background">
         <div class="container centered" id="countdown">
