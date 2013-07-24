@@ -65,7 +65,11 @@
         </div>
     </section>
 
-    <?php render($content); ?>
+    <section>
+        <div class="container">
+            <?php print render($page['content']); ?>
+        </div>
+    </section>
 
     <footer class="site-footer" id="site-footer">
         <div class="container">
