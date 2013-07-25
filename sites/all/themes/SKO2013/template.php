@@ -1,5 +1,21 @@
 <?php
 
+// Breadcrumbs
+function SKO2013_breadcrumb($variables) {
+    $breadcrumb = $variables['breadcrumb'];
+
+
+    if (!empty($breadcrumb)) {
+        $title = drupal_get_title();
+
+        if (!empty($title)) {
+            $breadcrumb[] = $title;
+        }
+
+        return implode(' » ', $breadcrumb);
+    }
+}
+
 // Fancy webform on bottom
 function SKO2013_form_alter(&$form, &$form_state, $form_id) {
     if ($form_id == "webform_client_form_1") { // Ex: "webform_client_form_33"

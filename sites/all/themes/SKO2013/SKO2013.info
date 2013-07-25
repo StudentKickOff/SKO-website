@@ -6,6 +6,7 @@ version = VERSION
 core = 7.x
 
 stylesheets[all][] = assets/css/style.css.less
+stylesheets[all][] = assets/css/overwrites.css.less
 
 scripts[] = assets/js/app.js
 scripts[] = assets/js/moment.js

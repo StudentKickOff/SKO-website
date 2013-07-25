@@ -67,6 +67,9 @@
 
     <section>
         <div class="container">
+            <p class="breadcrumb">
+                <?php print $breadcrumb ?>
+            </p>
             <?php print render($page['content']); ?>
         </div>
     </section>
