@@ -10,7 +10,10 @@ stylesheets[all][] = assets/css/style.css.less
 scripts[] = assets/js/app.js
 scripts[] = assets/js/moment.js
 
+regions[hot] = Hot
+regions[partners] = Partners
 regions[content] = Content
+regions[footer] = Footer
 
 ; Information added by drupal.org packaging script on 2013-04-03
 version = "7.0-dev"

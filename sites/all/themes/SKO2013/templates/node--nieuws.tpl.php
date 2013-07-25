@@ -4,7 +4,7 @@
             <div class="grid-item-image-overlay">
                 <a href="<?php print $node_url; ?>" class="button button-white">Lees meer</a>
             </div>
-            <img src="<?php print image_style_url('none', $node->field_kleine_foto['und'][0]['uri']); ?>">
+            <?php print render($content['field_kleine_foto']); ?>
         </div>
         <div class="grid-item-content">
             <header>
@@ -12,7 +12,7 @@
                 <h3><?php print $title; ?></h3>
             </header>
             <p>
-                <?php print $node->body['und']['0']['summary']; ?>
+                <?php print render($content['body']); ?>
             </p>
             <footer>
                 <span class="author">By <?php print $name; ?></span>
@@ -20,7 +20,46 @@
             </footer>
         </div>
     </article>
+
+
 <?php else : ?>
-    print "supperdesup";
+    
+    <h1>Nieuws</h1>
+    <article class="white-background detail-full-item news-full-item">
+        <div class="detail-full-width-image">
+            <?php print render($content['field_grote_foto']); ?>
+        </div>
+        <div class="detail-container">
+            <aside class="detail-side">
+                <img src="" />
+            </aside>
+            <div class="detail-content">
+                <header>
+                    <datetime class="news-date"><?php print $date; ?></datetime>
+                    <h1 class="news-heading"><?php print $title; ?></h1>
+                </header>
+                <?php print render($content['body']); ?>
+            </div>
+            <footer>
+                <ul class="share-icons">
+                    <li class="share-icon share-icon-facebook">
+                        <a href="#" title="">Facebook</a>
+                    </li>
+                    <li class="share-icon share-icon-pinterest">
+                        <a href="#" title="">Pinterest</a>
+                    </li>
+                    <li class="share-icon share-icon-twitter">
+                        <a href="#" title="">Twitter</a>
+                    </li>
+                    <li class="share-icon share-icon-google-plus">
+                        <a href="#" title="">Google+</a>
+                    </li>
+                    <li class="share-icon share-icon-rss">
+                        <a href="#" title="">RSS</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </article>
 
 <?php endif; ?>

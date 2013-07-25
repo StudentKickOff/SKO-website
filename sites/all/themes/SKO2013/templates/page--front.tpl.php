@@ -65,6 +65,54 @@
         </div>
     </section>
 
+    <section class="white-background">
+        <div class="container centered">
+            <h1 class="hidden">Praktisch</h1>
+            <ul class="feature-list">
+                <li class="feature-list-item">
+                    <img class="feature-list-item-image" src="<?php print $base_path.path_to_theme(); ?>/assets/images/feature-waar.png" />
+                    <h2>Waar?</h2>
+                    <p>
+                        Sint&ndash;Pietersplein<br />
+                        9000 Gent
+                    </p>
+                </li>
+                <li class="feature-list-item">
+                    <img class="feature-list-item-image" src="<?php print $base_path.path_to_theme(); ?>/assets/images/feature-wanneer.png" />
+                    <h2>Wanneer?</h2>
+                    <p>
+                        Woensdag 26 september
+                    </p>
+                </li>
+                <li class="feature-list-item">
+                    <img class="feature-list-item-image" src="<?php print $base_path.path_to_theme(); ?>/assets/images/feature-hoe-laat.png" />
+                    <h2>Hoe laat?</h2>
+                    <p>
+                        Vanaf 12 uur tot in de vroege uurtjes
+                    </p>
+                </li>
+            </ul>
+            <a href="" class="button">Meer praktische info</a>
+        </div>
+    </section>
+
+    <section class="pattern-background">
+        <div class="container has-sidebar">
+            <div class="main">
+                <h1>What&rsquo;s hot!?</h1>
+                <div class="slider-container">
+                    <?php print render($page['hot']); ?>
+                    <a href="#" class="slider-previous-arrow">Previous</a>
+                    <a href="#" class="slider-next-arrow">Next</a>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <h2>Onze partners</h2>
+                <?php print render($page['partners']); ?>
+            </aside>
+        </div>
+    </section>
+
     <section>
         <div class="container">
             <?php print render($page['content']); ?>
