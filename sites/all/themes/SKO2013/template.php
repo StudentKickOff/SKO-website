@@ -1,6 +1,6 @@
 <?php
 
-// Breadcrumbs
+// Fancy breadcrumbs
 function SKO2013_breadcrumb($variables) {
     $breadcrumb = $variables['breadcrumb'];
 
