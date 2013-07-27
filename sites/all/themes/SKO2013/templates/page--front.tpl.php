@@ -1,8 +1,8 @@
-<!--    <header class="site-header" id="site-header">
+    <header class="site-header" id="site-header">
         <div class="container">
-            <h1 class="site-header-logo">-->
-<!--                <a href="#"><img src="--><?php //print $base_path.path_to_theme(); ?><!--/assets/images/logo-shadow.png" alt="Student Kick Off" /></a>-->
-<!--            </h1>
+            <h1 class="site-header-logo">
+                <a href="#"><img src="<?php print $base_path.path_to_theme(); ?>/assets/images/logo-shadow.png" alt="Student Kick Off" /></a>
+            </h1>
             <nav>
                 <ul class="horizontal-navigation site-navigation">
                      </li> and starting <li> have to be on the same line
@@ -21,7 +21,7 @@
                 </ul>
             </nav>
         </div>
-    </header>-->
+    </header>
 
     <section class="picture-background">
         <div class="container centered" id="countdown">
@@ -101,7 +101,9 @@
             <div class="main">
                 <h1>What&rsquo;s hot!?</h1>
                 <div class="slider-container">
-                    <?php print render($page['hot']); ?>
+                    <div id="slider">
+                        <?php print render($page['hot']); ?>
+                    </div>
                     <a href="#" class="slider-previous-arrow">Previous</a>
                     <a href="#" class="slider-next-arrow">Next</a>
                 </div>
