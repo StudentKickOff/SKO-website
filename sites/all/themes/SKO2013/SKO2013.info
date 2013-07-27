@@ -14,6 +14,8 @@ scripts[] = assets/js/moment.js
 regions[hot] = Hot
 regions[partners] = Partners
 regions[content] = Content
+regions[columnleft] = Left Column
+regions[columnright] = Right Column
 regions[footer] = Footer
 
 ; Information added by drupal.org packaging script on 2013-04-03

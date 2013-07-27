@@ -70,7 +70,20 @@
             <p class="breadcrumb">
                 <?php print $breadcrumb ?>
             </p>
-            <?php print render($page['content']); ?>
+            <?php if($title === "Line-up") : ?>
+                <div class="two-columns">
+                    <div class="column white-background column-no-padding">
+                        <h1>Main Stage</h1>
+                        <?php print render($page['columnleft']); ?>
+                    </div>
+                    <div class="column column-no-padding white-background">
+                        <h1>Second Stage</h1>
+                        <?php print render($page['columnright']); ?>
+                    </div>
+                </div>
+            <?php else : ?> 
+                <?php print render($page['content']); ?>
+            <?php endif; ?>
         </div>
     </section>
 
