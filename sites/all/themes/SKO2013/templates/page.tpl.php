@@ -5,18 +5,18 @@
             </h1>
             <nav>
                 <ul class="horizontal-navigation site-navigation">
-                     </li> and starting <li> have to be on the same line
-                         because display:inline-block will add whitespace otherwise 
+                     <!--</li> and starting <li> have to be on the same line
+                         because display:inline-block will add whitespace otherwise-->
                     <li class="current horizontal-navigation-item site-navigation-item">
-                        <a href="index.html" title="" class="current site-navigation-home">Home</a>
+                         <?php print l('Home', 'frontpage', array('attributes' => array('class' => array('current site-navigation-home')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">
-                        <a href="line-up.html" title="" class="site-navigation-line-up">Line-up</a>
+                         <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('current site-navigation-line-up')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">
-                        <a href="student-village.html" title="" class="site-navigation-student-village">Student Village</a>
+                         <?php print l('Student village', 'student-village', array('attributes' => array('class' => array('current site-navigation-student-village')))); ?>
                     </li><li class="current horizontal-navigation-item site-navigation-item">
-                        <a href="index.html" title="" class="current site-navigation-praktisch">Praktisch</a>
+                         <?php print l('Praktisch', 'praktisch', array('attributes' => array('class' => array('current site-navigation-praktisch')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">
-                        <a href="historiek.html" title="" class="site-navigation-historiek">Historiek</a>
+                         <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('current site-navigation-historiek')))); ?>
                     </li>
                 </ul>
             </nav>
