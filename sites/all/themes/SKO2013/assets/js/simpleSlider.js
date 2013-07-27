@@ -8,4 +8,15 @@ $(document).ready(function() {
         bullets: false, // show the bullet navigation
         title: false, // show the image title
     });
+    
+    $('.slider-previous-arrow').click(function(e){
+        e.preventDefault();
+        $('#slider').simpleSlider().previous();
+    });
+    
+    $('.slider-next-arrow').click(function(e){ 
+        e.preventDefault();
+        $('#slider').simpleSlider().next();
+    });
+
 });
