@@ -52,16 +52,16 @@
                 <span class="number-sub">minuten</span>
             </span>
             <ul class="social-icons">
-        <li class="social-icon social-icon-facebook">
-            <a href="#" title="">Facebook</a>
-        </li>
-        <li class="social-icon social-icon-twitter">
-            <a href="#" title="">Twitter</a>
-        </li>
-        <li class="social-icon social-icon-instagram">
-            <a href="#" title="">Instagram</a>
-        </li>
-    </ul>
+                <li class="social-icon social-icon-facebook">
+                    <a href="#" title="">Facebook</a>
+                </li>
+                <li class="social-icon social-icon-twitter">
+                    <a href="#" title="">Twitter</a>
+                </li>
+                <li class="social-icon social-icon-instagram">
+                    <a href="#" title="">Instagram</a>
+                </li>
+            </ul>
         </div>
     </section>
 
