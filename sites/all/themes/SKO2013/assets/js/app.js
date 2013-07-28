@@ -1,3 +1,20 @@
+/**
+ * WiNA Spotlight Countdown Clock
+ * Ticks away the time until the first day of school!
+ *
+ * @author Pieter De Baets
+ * @author Thomas Meire
+ *
+ * @copyright Copyright &copy; 2010 WiNA Devteam
+ */
+function pad(number, length) {
+    var str = '' + number;
+    while (str.length < length) {
+        str = '0' + str;
+    }
+    return str;
+}
+
 var countdown = function () {
     var days = 0,
         hours = 0,
@@ -7,21 +24,21 @@ var countdown = function () {
 
     // Days
     days = Math.floor(diff / 86400);
-    strings.days = days.toString().split('');
+    strings.days = pad(days.toString(), 2).split('');
 
     // Substract days from diff
     diff = diff - (days * 86400);
 
     // Hours
     hours = Math.floor(diff / 3600);
-    strings.hours = hours.toString().split('');
+    strings.hours = pad(hours.toString(), 2).split('');
 
     // Subtract hours from diff
     diff = diff - (hours * 3600);
 
     // Minutes
     minutes = Math.round(diff / 60);
-    strings.minutes = minutes.toString().split('');
+    strings.minutes = pad(minutes.toString(), 2).split('');
 
     $.each(strings, function (key, value) {
         var numbers = $('#countdown-' + key).find('.number');
