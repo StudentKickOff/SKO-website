@@ -8,6 +8,7 @@ core = 7.x
 stylesheets[all][] = assets/css/fonts.css.less
 stylesheets[all][] = assets/css/style.css.less
 stylesheets[all][] = assets/css/overwrites.css.less
+stylesheets[all][] = assets/css/webforms.css.less
 
 scripts[] = assets/js/modernizr.js
 scripts[] = assets/js/app.js

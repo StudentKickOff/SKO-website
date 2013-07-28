@@ -309,50 +309,51 @@ fieldset {
 .label-icon-message {
   background-position: -10px -591px; }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
-textarea {
-  border: 0px;
-  border-radius: 3px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left;
-  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  padding: .55em 1em .65em;
-  width: 21em; }
-  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
-  textarea:focus {
-    outline: 0; }
-  @media only all and (max-width: 40em) {
-    .horizontal-input-group input[type="email"], .horizontal-input-group input[type="number"], .horizontal-input-group input[type="password"], .horizontal-input-group input[type="search"], .horizontal-input-group input[type="tel"], .horizontal-input-group input[type="text"], .horizontal-input-group input[type="url"], .horizontal-input-group input[type="color"], .horizontal-input-group input[type="date"], .horizontal-input-group input[type="datetime"], .horizontal-input-group input[type="datetime-local"], .horizontal-input-group input[type="month"], .horizontal-input-group input[type="time"], .horizontal-input-group input[type="week"], .horizontal-input-group
+.contact {
+    input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+    textarea, select {
+      border: 0px;
+      border-radius: 3px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+      font-size: 1em;
+      font-weight: bold;
+      padding: .55em 1em .65em;
+      width: 21em; }
+      input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+      textarea:focus {
+        outline: 0; }
+      @media only all and (max-width: 40em) {
+        .horizontal-input-group input[type="email"], .horizontal-input-group input[type="number"], .horizontal-input-group input[type="password"], .horizontal-input-group input[type="search"], .horizontal-input-group input[type="tel"], .horizontal-input-group input[type="text"], .horizontal-input-group input[type="url"], .horizontal-input-group input[type="color"], .horizontal-input-group input[type="date"], .horizontal-input-group input[type="datetime"], .horizontal-input-group input[type="datetime-local"], .horizontal-input-group input[type="month"], .horizontal-input-group input[type="time"], .horizontal-input-group input[type="week"], .horizontal-input-group
+        textarea {
+          margin-bottom: 1em; }
+          .horizontal-input-group input[type="email"]:last-child, .horizontal-input-group input[type="number"]:last-child, .horizontal-input-group input[type="password"]:last-child, .horizontal-input-group input[type="search"]:last-child, .horizontal-input-group input[type="tel"]:last-child, .horizontal-input-group input[type="text"]:last-child, .horizontal-input-group input[type="url"]:last-child, .horizontal-input-group input[type="color"]:last-child, .horizontal-input-group input[type="date"]:last-child, .horizontal-input-group input[type="datetime"]:last-child, .horizontal-input-group input[type="datetime-local"]:last-child, .horizontal-input-group input[type="month"]:last-child, .horizontal-input-group input[type="time"]:last-child, .horizontal-input-group input[type="week"]:last-child, .horizontal-input-group
+          textarea:last-child {
+            margin-bottom: 0; } }
+      @media only all and (min-width: 40em) {
+        .horizontal-input-group input[type="email"], .horizontal-input-group input[type="number"], .horizontal-input-group input[type="password"], .horizontal-input-group input[type="search"], .horizontal-input-group input[type="tel"], .horizontal-input-group input[type="text"], .horizontal-input-group input[type="url"], .horizontal-input-group input[type="color"], .horizontal-input-group input[type="date"], .horizontal-input-group input[type="datetime"], .horizontal-input-group input[type="datetime-local"], .horizontal-input-group input[type="month"], .horizontal-input-group input[type="time"], .horizontal-input-group input[type="week"], .horizontal-input-group
+        textarea {
+          margin-right: 1em; }
+          .horizontal-input-group input[type="email"]:last-child, .horizontal-input-group input[type="number"]:last-child, .horizontal-input-group input[type="password"]:last-child, .horizontal-input-group input[type="search"]:last-child, .horizontal-input-group input[type="tel"]:last-child, .horizontal-input-group input[type="text"]:last-child, .horizontal-input-group input[type="url"]:last-child, .horizontal-input-group input[type="color"]:last-child, .horizontal-input-group input[type="date"]:last-child, .horizontal-input-group input[type="datetime"]:last-child, .horizontal-input-group input[type="datetime-local"]:last-child, .horizontal-input-group input[type="month"]:last-child, .horizontal-input-group input[type="time"]:last-child, .horizontal-input-group input[type="week"]:last-child, .horizontal-input-group
+          textarea:last-child {
+            margin-right: 0; } }
+      input[type="email"].input-prefixed, input[type="number"].input-prefixed, input[type="password"].input-prefixed, input[type="search"].input-prefixed, input[type="tel"].input-prefixed, input[type="text"].input-prefixed, input[type="url"].input-prefixed, input[type="color"].input-prefixed, input[type="date"].input-prefixed, input[type="datetime"].input-prefixed, input[type="datetime-local"].input-prefixed, input[type="month"].input-prefixed, input[type="time"].input-prefixed, input[type="week"].input-prefixed,
+      textarea.input-prefixed {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; }
+
     textarea {
-      margin-bottom: 1em; }
-      .horizontal-input-group input[type="email"]:last-child, .horizontal-input-group input[type="number"]:last-child, .horizontal-input-group input[type="password"]:last-child, .horizontal-input-group input[type="search"]:last-child, .horizontal-input-group input[type="tel"]:last-child, .horizontal-input-group input[type="text"]:last-child, .horizontal-input-group input[type="url"]:last-child, .horizontal-input-group input[type="color"]:last-child, .horizontal-input-group input[type="date"]:last-child, .horizontal-input-group input[type="datetime"]:last-child, .horizontal-input-group input[type="datetime-local"]:last-child, .horizontal-input-group input[type="month"]:last-child, .horizontal-input-group input[type="time"]:last-child, .horizontal-input-group input[type="week"]:last-child, .horizontal-input-group
-      textarea:last-child {
-        margin-bottom: 0; } }
-  @media only all and (min-width: 40em) {
-    .horizontal-input-group input[type="email"], .horizontal-input-group input[type="number"], .horizontal-input-group input[type="password"], .horizontal-input-group input[type="search"], .horizontal-input-group input[type="tel"], .horizontal-input-group input[type="text"], .horizontal-input-group input[type="url"], .horizontal-input-group input[type="color"], .horizontal-input-group input[type="date"], .horizontal-input-group input[type="datetime"], .horizontal-input-group input[type="datetime-local"], .horizontal-input-group input[type="month"], .horizontal-input-group input[type="time"], .horizontal-input-group input[type="week"], .horizontal-input-group
-    textarea {
-      margin-right: 1em; }
-      .horizontal-input-group input[type="email"]:last-child, .horizontal-input-group input[type="number"]:last-child, .horizontal-input-group input[type="password"]:last-child, .horizontal-input-group input[type="search"]:last-child, .horizontal-input-group input[type="tel"]:last-child, .horizontal-input-group input[type="text"]:last-child, .horizontal-input-group input[type="url"]:last-child, .horizontal-input-group input[type="color"]:last-child, .horizontal-input-group input[type="date"]:last-child, .horizontal-input-group input[type="datetime"]:last-child, .horizontal-input-group input[type="datetime-local"]:last-child, .horizontal-input-group input[type="month"]:last-child, .horizontal-input-group input[type="time"]:last-child, .horizontal-input-group input[type="week"]:last-child, .horizontal-input-group
-      textarea:last-child {
-        margin-right: 0; } }
-  input[type="email"].input-prefixed, input[type="number"].input-prefixed, input[type="password"].input-prefixed, input[type="search"].input-prefixed, input[type="tel"].input-prefixed, input[type="text"].input-prefixed, input[type="url"].input-prefixed, input[type="color"].input-prefixed, input[type="date"].input-prefixed, input[type="datetime"].input-prefixed, input[type="datetime-local"].input-prefixed, input[type="month"].input-prefixed, input[type="time"].input-prefixed, input[type="week"].input-prefixed,
-  textarea.input-prefixed {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0; }
+      height: 12em; }
 
-textarea {
-  height: 12em; }
+    form .button {
+      float: right; }
 
-form .button {
-  float: right; }
-
-@media only all and (min-width: 40em) {
-  .textarea-span-two {
-    width: 43em; } }
+    @media only all and (min-width: 40em) {
+      .textarea-span-two {
+        width: 43em; } } }
 
 .social-icons {
   *zoom: 1;
