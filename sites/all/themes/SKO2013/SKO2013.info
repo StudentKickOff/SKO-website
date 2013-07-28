@@ -12,8 +12,8 @@ stylesheets[all][] = assets/css/overwrites.css.less
 scripts[] = assets/js/modernizr.js
 scripts[] = assets/js/app.js
 scripts[] = assets/js/moment.js
-scripts[] = assets/js/jquery.simpleSlider.js
-scripts[] = assets/js/simpleSlider.js
+scripts[] = assets/js/jquery.flexslider.js
+scripts[] = assets/js/flexslider.js
 
 regions[hot] = Hot
 regions[partners] = Partners

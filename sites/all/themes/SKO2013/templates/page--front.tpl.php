@@ -110,7 +110,9 @@
             </div>
             <aside class="sidebar">
                 <h2>Onze partners</h2>
-                <?php print render($page['partners']); ?>
+                    <div id="partner-slider">
+                        <?php print render($page['partners']); ?>
+                    </div>
             </aside>
         </div>
     </section>

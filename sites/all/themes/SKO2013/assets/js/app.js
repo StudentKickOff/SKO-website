@@ -70,6 +70,9 @@ $(document).ready(function () {
         sidebarHeight = sidebar.height(),
         mainHeight = main.height();
 
+    console.log(mainHeight);
+    console.log(sidebarHeight);
+
     if (mainHeight > sidebarHeight) {
         sidebar.height(mainHeight);
     }
