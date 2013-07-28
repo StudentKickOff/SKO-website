@@ -106,13 +106,17 @@
                             <a href="#" title="">Instagram</a>
                         </li>
                     </ul>
-                    <h3>Student Kick&#45;off</h3>
+                    <h3>Student Kick&#45;off vzw</h3>
                     <p>
-                        Adres regel 01<br />
-                        Adres regel 02
+                        <b>Maatschappelijke zetel</b><br />
+                        Botermarkt 1<br />
+                        9000 Gent<br />
+                        BTW BE 0886.847.343
                     </p>
                     <p>
-                        +32 479 60 87 70
+                        <b>Postadres</b><br />
+                        Blekerijstraat 75 bus 3<br />
+                        9000 Gent
                     </p>
                 </div>
             </div>

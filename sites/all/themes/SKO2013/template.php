@@ -19,6 +19,7 @@ function SKO2013_breadcrumb($variables) {
 // Fancy webform on bottom
 function SKO2013_form_alter(&$form, &$form_state, $form_id) {
     if ($form_id == "webform_client_form_1") { // Ex: "webform_client_form_33"
+        $form['#attributes']['class'][] = 'contact-form';
         foreach ($form["submitted"] as $key => $value) {
             if (in_array($value["#type"], array("textfield", "webform_email", "textarea"))) {
                 $form["submitted"][$key]['#attributes']["placeholder"] = t("Je ") . strtolower(t($value["#title"]));
