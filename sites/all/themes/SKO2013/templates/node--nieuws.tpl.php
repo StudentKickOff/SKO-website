@@ -2,7 +2,7 @@
     <article>
         <div class="grid-item-image">
             <div class="grid-item-image-overlay">
-                <a href="<?php print $node_url; ?>" class="button button-white">Lees meer</a>
+                <a href="<?php print $node_url . '#scrollTo'; ?>" class="button button-white">Lees meer</a>
             </div>
             <?php print render($content['field_kleine_foto']); ?>
         </div>
@@ -10,7 +10,7 @@
             <header>
                 <datetime class="news-date"><?php print $date; ?></datetime>
                 <h3>                
-                    <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+                    <a href="<?php print $node_url . '#scrollTo'; ?>"><?php print $title; ?></a>
                 </h3>
             </header>
             <p>
