@@ -69,6 +69,12 @@
             <p class="breadcrumb">
                 <?php print $breadcrumb ?>
             </p>
+            <?php if ($messages): ?>
+                <div id="messages"><div class="section clearfix">
+                        <?php print $messages; ?>
+                    </div></div> <!-- /.section, /#messages -->
+            <?php endif; ?>
+
             <?php if($title === "Line-up") : ?>
                 <div class="two-columns">
                     <div class="column white-background column-no-padding">

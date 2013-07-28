@@ -271,6 +271,32 @@ a {
   color: #55606e;
   cursor: default; }
 
+.contact {
+    .contact-logo {
+  display: none; }
+  @media only all and (min-width: 63em) {
+    .contact-logo {
+      display: block;
+      float: left;
+      position: relative;
+      top: -9em; } }
+
+.contact-form {
+  *zoom: 1;
+  float: left;
+  margin-right: 6em;
+  width: 23.5em; }
+  .contact-form:before, .contact-form:after {
+    content: " ";
+    display: table; }
+  .contact-form:after {
+    clear: both; }
+
+.contact-information {
+  float: left;
+  padding-top: 5.5em; }
+
+
 fieldset {
   border: 0;
   margin: 0 auto;
@@ -309,7 +335,6 @@ fieldset {
 .label-icon-message {
   background-position: -10px -591px; }
 
-.contact {
     input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
     textarea, select {
       border: 0px;
@@ -710,30 +735,6 @@ h3 {
     display: table; }
   .contact:after {
     clear: both; }
-
-.contact-logo {
-  display: none; }
-  @media only all and (min-width: 63em) {
-    .contact-logo {
-      display: block;
-      float: left;
-      position: relative;
-      top: -9em; } }
-
-.contact-form {
-  *zoom: 1;
-  float: left;
-  margin-right: 6em;
-  width: 23.5em; }
-  .contact-form:before, .contact-form:after {
-    content: " ";
-    display: table; }
-  .contact-form:after {
-    clear: both; }
-
-.contact-information {
-  float: left;
-  padding-top: 5.5em; }
 
 .copyright {
   color: #55606e; }

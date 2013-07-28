@@ -95,8 +95,11 @@ $(document).ready(function () {
     }
 
     // Equal height on labels and textarea (for background effect)
-    $('textarea').each(function () {
-        $(this).prev('label').height($(this).height() + 17);
+    $('.contact').find('textarea').each(function () {
+        $(this).parent().prev().height($(this).height() + 15);
+    });
+    $('.contact').find('select').each(function () {
+        $(this).prev().height($(this).height() + 15);
     });
 
     // History accordeon
