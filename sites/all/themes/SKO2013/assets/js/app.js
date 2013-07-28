@@ -60,7 +60,7 @@ $(document).ready(function () {
             timeout = setTimeout(function () {
                 detect = true;
                 timeout = null;
-            }, 100);
+            }, 30);
         }
     });
 
