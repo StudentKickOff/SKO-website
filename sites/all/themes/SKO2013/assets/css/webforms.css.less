@@ -355,9 +355,14 @@
 
 }
 
-.contact select {
+.contact {
+  select {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  legend {
+    display: none;
+  }
 }
 
 select {
@@ -392,14 +397,14 @@ select {
         text-decoration: none;
         -webkit-transition: background-color 220ms ease-in-out;
         -moz-transition: background-color 220ms ease-in-out;
-        transition: background-color 220ms ease-in-out; 
+        transition: background-color 220ms ease-in-out;
         &:hover {
-            background-color: #3b9de9; 
+            background-color: #3b9de9;
         }
         &:active {
             position: relative;
             top: 0.2em;
-            box-shadow: none; 
+            box-shadow: none;
         }
     }
-} 
+}
