@@ -31,7 +31,8 @@
         </div>
         <div class="detail-container">
             <aside class="detail-side">
-                <img src="" />
+                <h2 class="heading-primary">Foto&rsquo;s</h2>
+                <?php print render($content['field_fotos']); ?>
             </aside>
             <div class="detail-content">
                 <header>
