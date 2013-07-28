@@ -9,7 +9,9 @@
         <div class="grid-item-content">
             <header>
                 <datetime class="news-date"><?php print $date; ?></datetime>
-                <h3><?php print $title; ?></h3>
+                <h3>                
+                    <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+                </h3>
             </header>
             <p>
                 <?php print render($content['body']); ?>
