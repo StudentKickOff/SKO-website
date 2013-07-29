@@ -92,7 +92,7 @@
                     </p>
                 </li>
             </ul>
-            <a href="" class="button">Meer praktische info</a>
+            <?php print l('Meer praktische info', 'praktisch', array('attributes' => array('class' => array('button')))); ?>
         </div>
     </section>
 
