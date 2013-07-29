@@ -12,6 +12,16 @@ function SKO2013_preprocess_html(&$vars) {
     drupal_add_html_head($viewport, 'viewport');
 }
 
+// Nice images
+function SKO2013_preprocess_image(&$variables) {
+  $attributes = &$variables['attributes'];
+
+  foreach (array('width', 'height') as $key) {
+    unset($attributes[$key]);
+    unset($variables[$key]);
+  }
+}
+
 // Fancy breadcrumbs
 function SKO2013_breadcrumb($variables) {
     $breadcrumb = $variables['breadcrumb'];
