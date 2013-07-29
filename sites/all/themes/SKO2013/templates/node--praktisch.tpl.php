@@ -7,5 +7,6 @@
         <p>
             <?php print render($content['field_uitleg']); ?>
         </p>
+        <?php print render($content['field_afbeelding']); ?>
     </div>
 </article>
