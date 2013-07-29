@@ -18,7 +18,6 @@
             </p>
             <footer>
                 <span class="author">By <?php print $name; ?></span>
-                //<span class="comments-counter">3<span class="hidden"><?php print $comment_count; ?></span></span>
             </footer>
         </div>
     </article>
