@@ -2,10 +2,8 @@
     <a href="<?php print $node_url; ?>">
         <span class="line-up-item-timespan">
             <?php
-                $splitted = preg_split('/ /', $content['field_tijd'][0]['#markup']);
-                $start = str_replace(':', 'U', substr($splitted[1], 0, 3));
-                $eind = str_replace(':', 'U', substr($splitted[4], 0, 3));
-                print $start . "-" . $eind;
+                $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
+                print $splitted[0] . "-" . $splitted[2];
             ?>
         </span>
         <span class="line-up-item-artist"><?php print $title; ?></span>
@@ -39,10 +37,8 @@
                     <h1 class="no-margin no-padding"><?php print $title; ?></h1>
                     <h2 class="line-up-detail-timespan">
                         <?php
-                        $splitted = preg_split('/ /', $content['field_tijd'][0]['#markup']);
-                        $start = str_replace(':', 'u', substr($splitted[1], 0, 5));
-                        $eind = str_replace(':', 'u', substr($splitted[4], 0, 5));
-                        print "van " . $start . " tot " . $eind;
+                            $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
+                            print 'Van ' . $splitted[0] . " tot " . $splitted[2];
                         ?>
                     </h2>
                 </header>
