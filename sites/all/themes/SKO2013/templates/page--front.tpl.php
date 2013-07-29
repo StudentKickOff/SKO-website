@@ -108,7 +108,7 @@
                     <a href="#" class="slider-next-arrow">Next</a>
                 </div>
             </div>
-            <aside class="sidebar">
+            <aside class="sidebar-closer"><br /><br /><br /><br />
                 <h2>Onze partners</h2>
                     <div id="partner-slider">
                         <?php print render($page['partners']); ?>
