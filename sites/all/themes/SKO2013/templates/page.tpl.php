@@ -12,7 +12,7 @@
                     </li><li class="horizontal-navigation-item site-navigation-item">
                          <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('current site-navigation-line-up')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">
-                         <?php print l('Student village', 'student-village', array('attributes' => array('class' => array('current site-navigation-student-village')))); ?>
+                         <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('current site-navigation-student-village')))); ?>
                     </li><li class="current horizontal-navigation-item site-navigation-item">
                          <?php print l('Praktisch', 'praktisch', array('attributes' => array('class' => array('current site-navigation-praktisch')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">

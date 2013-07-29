@@ -17,7 +17,7 @@
                          <?php print l('Praktisch', 'praktisch', array('attributes' => array('class' => array('current site-navigation-praktisch')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">
                          <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('current site-navigation-historiek')))); ?>
-                    </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&#9776;</a></li>
+                    </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&#9776;</a></li>                
                 </ul>
             </nav>
         </div>
@@ -28,98 +28,52 @@
             <h1 class="hidden">Countdown</h1>
             <div class="countdown-title">
                 Student Kick&#45;off 2013<br />
-                starting in
             </div>
-            <span class="two-numbers">
-                <span id="countdown-days">
-                    <span class="number">2</span>
-                    <span class="number">7</span>
-                </span>
-                <span class="number-sub">dagen</span>
-            </span>
-            <span class="two-numbers">
-                <span id="countdown-hours">
-                    <span class="number">2</span>
-                    <span class="number">7</span>
-                </span>
-                <span class="number-sub">uren</span>
-            </span>
-            <span class="two-numbers">
-                <span id="countdown-minutes">
-                    <span class="number">2</span>
-                    <span class="number">7</span>
-                </span>
-                <span class="number-sub">minuten</span>
-            </span>
             <ul class="social-icons">
-        <li class="social-icon social-icon-facebook">
-            <a href="#" title="">Facebook</a>
-        </li>
-        <li class="social-icon social-icon-twitter">
-            <a href="#" title="">Twitter</a>
-        </li>
-        <li class="social-icon social-icon-instagram">
-            <a href="#" title="">Instagram</a>
-        </li>
-    </ul>
-        </div>
-    </section>
-
-    <section class="white-background">
-        <div class="container centered">
-            <h1 class="hidden">Praktisch</h1>
-            <ul class="feature-list">
-                <li class="feature-list-item">
-                    <img class="feature-list-item-image" src="<?php print $base_path.path_to_theme(); ?>/assets/images/feature-waar.png" />
-                    <h2>Waar?</h2>
-                    <p>
-                        Sint&ndash;Pietersplein<br />
-                        9000 Gent
-                    </p>
+                <li class="social-icon social-icon-facebook">
+                    <a href="#" title="">Facebook</a>
                 </li>
-                <li class="feature-list-item">
-                    <img class="feature-list-item-image" src="<?php print $base_path.path_to_theme(); ?>/assets/images/feature-wanneer.png" />
-                    <h2>Wanneer?</h2>
-                    <p>
-                        Woensdag 26 september
-                    </p>
+                <li class="social-icon social-icon-twitter">
+                    <a href="#" title="">Twitter</a>
                 </li>
-                <li class="feature-list-item">
-                    <img class="feature-list-item-image" src="<?php print $base_path.path_to_theme(); ?>/assets/images/feature-hoe-laat.png" />
-                    <h2>Hoe laat?</h2>
-                    <p>
-                        Vanaf 12 uur tot in de vroege uurtjes
-                    </p>
+                <li class="social-icon social-icon-instagram">
+                    <a href="#" title="">Instagram</a>
                 </li>
             </ul>
-            <?php print l('Meer praktische info', 'praktisch', array('attributes' => array('class' => array('button')))); ?>
-        </div>
-    </section>
-
-    <section class="pattern-background">
-        <div class="container has-sidebar">
-            <div class="main">
-                <h1>What&rsquo;s hot!?</h1>
-                <div class="slider-container">
-                    <div id="slider">
-                        <?php print render($page['hot']); ?>
-                    </div>
-                    <a href="#" class="slider-previous-arrow">Previous</a>
-                    <a href="#" class="slider-next-arrow">Next</a>
-                </div>
-            </div>
-            <aside class="sidebar-closer"><br /><br /><br /><br />
-                <h2>Onze partners</h2>
-                    <div id="partner-slider">
-                        <?php print render($page['partners']); ?>
-                    </div>
-            </aside>
         </div>
     </section>
 
     <section>
-        <div class="container">
-            <?php print render($page['content']); ?>
+        <div class="container"  id="scrollTo">
+            <p class="breadcrumb">
+                <?php print $breadcrumb ?>
+            </p>
+            <?php if ($messages): ?>
+                <div id="messages">
+                    <div class="section clearfix">
+                        <?php print $messages; ?>
+                    </div>
+                </div> <!-- /.section, /#messages -->
+            <?php endif; ?>
+                    
+            <div class="two-columns">
+                <div class="column white-background column-no-padding">
+                    <div class="detail-full-width-image">
+                        <img src="<?php print $base_path.path_to_theme(); ?>/assets/images/bart-kaell.jpg" />
+                    </div>
+                    <h1>Student Village</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, at, nemo, architecto, quia dolorum a dolorem consequuntur itaque quaerat pariatur id iure qui consequatur quibusdam recusandae nam dignissimos minus iusto!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, veritatis nobis distinctio architecto. Minima, consequatur.
+                    </p>
+                </div>
+                <div class="student-village-container column white-background column-no-padding">
+                    <h1>Programmatie</h1>
+                    <?php print render($page['content']); ?>
+                </div>
+            </div>
         </div>
     </section>
 
