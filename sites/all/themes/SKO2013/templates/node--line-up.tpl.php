@@ -19,14 +19,20 @@
         </div>
         <div class="detail-container">
             <aside class="detail-side">
-                <h2 class="heading-primary">Foto&rsquo;s</h2>
-                <?php print render($content['field_fotos']); ?>
-                <div style="clear: both;"></div>
-                <h2 class="heading-ternary">Video&rsquo;s</h2>
-                <h2 class="heading-secondary">Website</h2>
-                <a href="<?php print render($content['field_website'][0]['#markup']); ?>" target="_blank">
-                    Website van <?php print $title; ?>
-                </a>
+                <?php if(!empty($content['field_fotos'])) : ?>
+                    <h2 class="heading-primary">Foto&rsquo;s</h2>
+                    <?php print render($content['field_fotos']); ?>
+                    <div style="clear: both;"></div>
+                <?php endif; ?>
+                <?php if(!empty($content['field_videos'])) : ?>
+                    <h2 class="heading-ternary">Video&rsquo;s</h2>
+                <?php endif; ?>
+                <?php if(!empty($content['field_website'])) : ?>
+                    <h2 class="heading-secondary">Website</h2>
+                    <a href="<?php print render($content['field_website'][0]['#markup']); ?>" target="_blank">
+                        Website van <?php print $title; ?>
+                    </a>
+                <?php endif; ?>
             </aside>
             <div class="detail-content">
                 <header>
