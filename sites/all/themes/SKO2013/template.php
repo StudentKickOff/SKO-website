@@ -39,7 +39,7 @@ function SKO2013_form_element_label($variables) {
     $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
 
     $title = filter_xss_admin($element['#title']);
-    
+
     $attributes = array();
     $attributes['class'] = '';
     // Style the label as class option to display inline with the element.
@@ -55,21 +55,21 @@ function SKO2013_form_element_label($variables) {
         $attributes['for'] = $element['#id'];
     }
 
-    
-    if(isset($element['#webform_component']) && $element['#webform_component']['nid'] == 1) {
-        if($element['#webform_component']['form_key'] == "naam") {
+
+    if (isset($element['#webform_component']) && $element['#webform_component']['nid'] == 1) {
+        if ($element['#webform_component']['form_key'] == "naam") {
             $attributes['class'] .= ' label-icon label-icon-name';
-        } else if($element['#webform_component']['form_key'] == "e_mail") {
+        } else if ($element['#webform_component']['form_key'] == "e_mail") {
             $attributes['class'] .= ' label-icon label-icon-email';
-        } else if($element['#webform_component']['form_key'] == "gsm_nummer") {
+        } else if ($element['#webform_component']['form_key'] == "gsm_nummer") {
             $attributes['class'] .= ' label-icon label-icon-number';
-        } else if($element['#webform_component']['form_key'] == "wie_wenst_u_te_bereiken") {
+        } else if ($element['#webform_component']['form_key'] == "wie_wenst_u_te_bereiken") {
             $attributes['class'] .= ' label-icon label-icon-wie';
-        } else if($element['#webform_component']['form_key'] == "bericht") {
+        } else if ($element['#webform_component']['form_key'] == "bericht") {
             $attributes['class'] .= ' label-icon label-icon-message';
         }
     }
-    
+
     // The leading whitespace helps visually separate fields from inline labels.
     return ' <label' . drupal_attributes($attributes) . '>' . $t('!title !required', array('!title' => $title, '!required' => $required)) . "</label>\n";
 }
@@ -220,4 +220,11 @@ function SKO2013_pager_next($variables) {
     }
 
     return $output;
+}
+
+function SKO2013_preprocess_page(&$variables, $hook) {
+
+    if (arg(0) != 'frontpage') {
+        drupal_add_css(path_to_theme() . '/assets/css/nonfront.css.less', array('group' => CSS_THEME, 'weight' => 115, 'browsers' => array('IE' => 1, '!IE' => 1), 'preprocess' => FALSE));
+    }
 }
