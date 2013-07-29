@@ -48,25 +48,6 @@
                 </header>
                 <?php print render($content['field_infotekst']); ?>
             </div>
-            <footer>
-                <ul class="share-icons">
-                    <li class="share-icon share-icon-facebook">
-                        <a href="#" title="">Facebook</a>
-                    </li>
-                    <li class="share-icon share-icon-pinterest">
-                        <a href="#" title="">Pinterest</a>
-                    </li>
-                    <li class="share-icon share-icon-twitter">
-                        <a href="#" title="">Twitter</a>
-                    </li>
-                    <li class="share-icon share-icon-google-plus">
-                        <a href="#" title="">Google+</a>
-                    </li>
-                    <li class="share-icon share-icon-rss">
-                        <a href="#" title="">RSS</a>
-                    </li>
-                </ul>
-            </footer>
         </div>
     </article>
 
