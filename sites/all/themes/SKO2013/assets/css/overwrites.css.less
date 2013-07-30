@@ -22,18 +22,6 @@ div.sb-image {
     background-color: black; }
 
 
-.slider {
-    border: 0px;
-    list-style: none; }
-
-.slider-item {
-    height: auto;
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
 .site-header {
     z-index: 500;
 }
@@ -54,14 +42,14 @@ select {
 }
 
 .student-village-container {
-    
+
     h1 {
         padding-bottom: 10px;
     }
     .detail-full-item {
         margin-bottom: 0px;
     }
-    
+
     .history-item {
         margin-bottom: 0em;
     }
@@ -73,3 +61,21 @@ select {
 .line-up-item-timespan {
     text-transform: none;
 }
+
+/* FlexSlider Necessary Styles
+*********************************/
+#slider {margin: 0; padding: 0;}
+#slider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+#slider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
