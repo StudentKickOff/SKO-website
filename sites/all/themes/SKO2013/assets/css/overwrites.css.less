@@ -31,9 +31,39 @@ div.sb-image {
     padding: 0 1.3em; background-color: #242a34;
 }
 
-#partner-slider {
-    li {
-        padding-bottom: 0px;
+
+
+
+.sidebar-closer {
+    
+    h2 {
+        padding-top: 60px;
+    }
+    
+    @media only all and (max-width: 1000px) {
+        text-align: center;
+        
+        position: relative !important;
+        width: auto;
+        max-width: 630px;
+        
+        
+        h2 {
+            margin-top: 40px;
+            padding-top: 12px;
+        }
+        
+        #partner-slider {
+            li a:nth-child(3) {
+                display: none;
+            }
+        }
+    }
+
+    #partner-slider {
+        li {
+            padding-bottom: 0px;
+        }
     }
 }
 

@@ -108,11 +108,11 @@
                     <a href="#" class="slider-next-arrow">Next</a>
                 </div>
             </div>
-            <aside class="sidebar-closer"><br /><br /><br /><br />
+            <aside class="sidebar-closer">
                 <h2>Onze partners</h2>
-                    <div id="partner-slider">
-                        <?php print render($page['partners']); ?>
-                    </div>
+                <div id="partner-slider">
+                    <?php print render($page['partners']); ?>
+                </div>
             </aside>
         </div>
     </section>
