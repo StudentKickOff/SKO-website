@@ -52,6 +52,18 @@ var countdown = function () {
     days = hours = minutes = strings = diff = null;
 };
 
+var setupNav = function () {
+    console.log('setup nav');
+    if (Modernizr.mq('only all and (max-width: 44.5em)')) {
+        $('#nav-toggle a').click(function () {
+            $('#site-header').toggleClass('is-expanded');
+            return false;
+        });
+    } else {
+        $('#nav-toggle').off();
+    }
+};
+
 $(document).ready(function () {
 
     // Countdown
@@ -81,18 +93,13 @@ $(document).ready(function () {
         }
     });
 
+    
     // Equal height on main and sidebar
-    var sidebar = $('.has-sidebar').find('.sidebar'),
-        main = $('.has-sidebar').find('.main'),
-        sidebarHeight = sidebar.height(),
-        mainHeight = main.height();
+    setupNav();
 
-    console.log(mainHeight);
-    console.log(sidebarHeight);
-
-    if (mainHeight > sidebarHeight) {
-        sidebar.height(mainHeight);
-    }
+    $(window).resize(function () {
+        setupNav();
+    });
 
     // Equal height on labels and textarea (for background effect)
     $('.contact').find('textarea').each(function () {
