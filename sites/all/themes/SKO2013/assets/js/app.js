@@ -60,7 +60,7 @@ var setupNav = function () {
             return false;
         });
     } else {
-        $('#nav-toggle').off();
+        $('#nav-toggle').die();
     }
 };
 
@@ -117,10 +117,14 @@ $(document).ready(function () {
 
         var that = $(this);
 
-        $('.history-item-expanded').find('.detail-container').slideUp(220, function () {
-            $('.history-item-expanded').removeClass('history-item-expanded');
+        if($('.history-item-expanded').length == 0) {
             that.closest('.history-item').addClass('history-item-expanded').find('.detail-container').slideDown(220);
-        });
+        } else {
+             $('.history-item-expanded').find('.detail-container').slideUp(220, function () {
+                $('.history-item-expanded').removeClass('history-item-expanded');
+                that.closest('.history-item').addClass('history-item-expanded').find('.detail-container').slideDown(220);
+            });
+        }
 
     });
 
