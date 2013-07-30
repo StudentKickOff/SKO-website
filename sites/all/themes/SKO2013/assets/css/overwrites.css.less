@@ -40,13 +40,20 @@ div.sb-image {
         padding-top: 60px;
     }
     
-    @media only all and (max-width: 1000px) {
+    #partner-slider {
+        li {
+            padding-bottom: 0px;
+        }
+    }
+}
+
+@media only all and (max-width: 1000px) {
+    .sidebar-closer {
         text-align: center;
         
         position: relative !important;
         width: auto;
         max-width: 630px;
-        
         
         h2 {
             margin-top: 40px;
@@ -59,12 +66,11 @@ div.sb-image {
             }
         }
     }
-
-    #partner-slider {
-        li {
-            padding-bottom: 0px;
-        }
+    
+    .slider-previous-arrow, .slider-next-arrow {
+        display: none; 
     }
+
 }
 
 select {
