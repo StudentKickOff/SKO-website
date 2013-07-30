@@ -4,7 +4,15 @@
             <div class="grid-item-image-overlay">
                 <a href="<?php print $node_url . '#scrollTo'; ?>" class="button button-white">Lees meer</a>
             </div>
-            <?php print render($content['field_kleine_foto']); ?>
+            <?php 
+                if (!empty($content['field_kleine_foto'])) {
+                    print render($content['field_kleine_foto']);
+                } else {
+                    if (!empty($content['field_grote_foto'])) {
+                        print render($content['field_grote_foto']);
+                    }
+                }
+             ?>
         </div>
         <div class="grid-item-content">
             <header>
