@@ -40,7 +40,7 @@ function SKO2013_breadcrumb($variables) {
 
 // Fancy webform on bottom
 function SKO2013_form_alter(&$form, &$form_state, $form_id) {
-    if ($form_id == "webform_client_form_1") { // Ex: "webform_client_form_33"
+    if ($form_id == "webform_client_form_51") { // Ex: "webform_client_form_33"
         $form['#attributes']['class'][] = 'contact-form';
         $form['submitted']['container']['wie_wenst_u_te_bereiken']['#empty_option'] = "Onderwerp";
     }
@@ -78,8 +78,8 @@ function SKO2013_form_element_label($variables) {
         $attributes['for'] = $element['#id'];
     }
 
-
-    if (isset($element['#webform_component']) && $element['#webform_component']['nid'] == 1) {
+    
+    if (isset($element['#webform_component']) && $element['#webform_component']['nid'] == 51) {
         if ($element['#webform_component']['form_key'] == "naam") {
             $attributes['class'] .= ' label-icon label-icon-name';
         } else if ($element['#webform_component']['form_key'] == "e_mail") {
