@@ -16,6 +16,7 @@ scripts[] = assets/js/app.js
 scripts[] = assets/js/moment.js
 scripts[] = assets/js/jquery.flexslider.js
 scripts[] = assets/js/flexslider.js
+scripts[] = assets/js/css3-mediaqueries.js
 
 regions[hot] = Hot
 regions[partners] = Partners
