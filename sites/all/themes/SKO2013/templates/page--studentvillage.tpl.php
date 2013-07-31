@@ -59,7 +59,7 @@
             <div class="two-columns">
                 <div class="column white-background column-no-padding">
                     <div class="detail-full-width-image">
-                        <img src="<?php print $base_path.path_to_theme(); ?>/assets/images/bart-kaell.jpg" />
+                        <img src="<?php print $base_path.path_to_theme(); ?>/assets/images/studentvillage-bg.png" />
                     </div>
                     <h1>Student Village</h1>
                     <p>
