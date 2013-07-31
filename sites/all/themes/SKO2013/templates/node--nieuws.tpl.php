@@ -4,7 +4,7 @@
             <div class="grid-item-image-overlay">
                 <a href="<?php print $node_url . '#scrollTo'; ?>" class="button button-white">Lees meer</a>
             </div>
-            <?php 
+            <?php
                 if (!empty($content['field_kleine_foto'])) {
                     print render($content['field_kleine_foto']);
                 } else {
@@ -17,7 +17,7 @@
         <div class="grid-item-content">
             <header>
                 <datetime class="news-date"><?php print $date; ?></datetime>
-                <h3>                
+                <h3>
                     <a href="<?php print $node_url . '#scrollTo'; ?>"><?php print $title; ?></a>
                 </h3>
             </header>
