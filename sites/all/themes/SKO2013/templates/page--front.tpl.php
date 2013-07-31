@@ -14,7 +14,7 @@
                     </li><li class="horizontal-navigation-item site-navigation-item">
                          <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('current site-navigation-student-village')))); ?>
                     </li><li class="current horizontal-navigation-item site-navigation-item">
-                         <?php print l('Praktisch', 'praktisch', array('attributes' => array('class' => array('current site-navigation-praktisch')))); ?>
+                         <?php print l('Info', 'info', array('attributes' => array('class' => array('current site-navigation-praktisch')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item">
                          <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('current site-navigation-historiek')))); ?>
                     </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&#9776;</a></li>
