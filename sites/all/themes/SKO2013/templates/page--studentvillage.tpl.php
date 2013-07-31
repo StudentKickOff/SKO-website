@@ -61,10 +61,10 @@
                     <div class="detail-full-width-image">
                         <img src="<?php print $base_path.path_to_theme(); ?>/assets/images/studentvillage-header.jpg" />
                     </div>
-                    <h1>Student Village? Watisda?</h1>
-                    <p>
-                        Gent staat bekend als dé studentenstad van Vlaanderen. Wie hier ooit studeerde, kan dit alleen maar beamen. Voor nieuwe studenten is het soms moeilijk hun weg te vinden tussen het gigantisch aanbod van verenigingen, voordelen en mogelijkheden die de Arteveldestad hen te bieden heeft. Om hen een beetje op weg te helpen biedt Student Kick-Off een heuse Student Village aan. Tussen 12h en 18h kan elke student hier terecht om een kijkje te nemen bij de verschillende standjes van allerlei verenigingen, partners en onderwijsinstellingen. Niet alleen droge informatie; scoor hier ook je lading goodies en gadgets of waag je aan één van de vele attracties! In de Student Village vind je alles wat je zoekt: van toneel tot muziek tot politiek! "En waar is dat allemaal te doen?", horen we je vragen: 25 september op 't Sint-Pietersplein met een concert op de achtergrond en een drankje in de hand! Cheers!                    </p>
-                    </p>
+                    <?php
+                        $nid = 82;
+                        print drupal_render(node_view(node_load($nid)));
+                    ?>
                 </div>
                 <div class="student-village-container column white-background column-no-padding">
                     <h1>Programmatie</h1>
