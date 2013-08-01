@@ -1,4 +1,4 @@
-<div class="studentvillage-kop">
+<div class="studentvillage-kop clearfix">
 
     <h1><?php print $title; ?></h1>
     <p>
