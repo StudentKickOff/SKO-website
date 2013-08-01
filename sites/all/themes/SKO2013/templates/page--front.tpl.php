@@ -92,7 +92,7 @@
                     </p>
                 </li>
             </ul>
-            <?php print l('Meer praktische info', 'praktisch', array('attributes' => array('class' => array('button')))); ?>
+            <?php print l('Meer praktische info', 'info', array('attributes' => array('class' => array('button')))); ?>
         </div>
     </section>
 
@@ -129,12 +129,12 @@
                 <div class="contact-logo">
                     <img src="<?php print $base_path.path_to_theme(); ?>/assets/images/logo-shadow.png" class="footer-logo" />
                 </div>
-                
+
                 <div class="two-columns">
                     <div class="column">
                         <?php print render($page['footer']); ?>
                     </div>
-                    
+
                     <div class="column">
                         <div class="contact-information">
                             <ul class="social-icons">
@@ -150,7 +150,7 @@
                             </ul>
 
 
-                            <h2>Meewerken?</h2>                    
+                            <h2>Meewerken?</h2>
                             <?php print l('Individueel', 'meewerken/inschrijven', array('attributes' => array('class' => array('button')))); ?>
                             <?php print l('Groep', 'meewerken/groepen', array('attributes' => array('class' => array('button')))); ?>
 
@@ -159,7 +159,7 @@
                             <h3>Standhouder Student Village?</h3>
                             <?php print l('Schrijf je nu in', 'meewerken/studentvillage', array('attributes' => array('class' => array('button button-red')))); ?>
 
-                            <p></p> 
+                            <p></p>
 
                             <h3>Pers?</h3>
                             <?php print l('Schrijf je nu in', 'pers', array('attributes' => array('class' => array('button button-yellow')))); ?>
