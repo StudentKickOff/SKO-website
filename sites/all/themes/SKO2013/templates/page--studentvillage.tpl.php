@@ -31,10 +31,10 @@
             </div>
             <ul class="social-icons">
                 <li class="social-icon social-icon-facebook">
-                    <a href="#" title="">Facebook</a>
+                    <a href="http://www.facebook.com/studentkickoff" title="" target="_blank">Facebook</a>
                 </li>
                 <li class="social-icon social-icon-twitter">
-                    <a href="#" title="">Twitter</a>
+                    <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
                 </li>
                 <li class="social-icon social-icon-instagram">
                     <a href="#" title="">Instagram</a>
@@ -90,10 +90,10 @@
                         <div class="contact-information">
                             <ul class="social-icons">
                                 <li class="social-icon social-icon-facebook">
-                                    <a href="#" title="">Facebook</a>
+                                    <a href="http://www.facebook.com/studentkickoff" title="" target="_blank">Facebook</a>
                                 </li>
                                 <li class="social-icon social-icon-twitter">
-                                    <a href="#" title="">Twitter</a>
+                                    <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
                                 </li>
                                 <li class="social-icon social-icon-instagram">
                                     <a href="#" title="">Instagram</a>
