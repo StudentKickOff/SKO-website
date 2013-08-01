@@ -51,21 +51,23 @@
                 </span>
                 <span class="number-sub">minuten</span>
             </span>
-            <ul class="social-icons">
-        <li class="social-icon social-icon-facebook">
-            <a href="http://www.facebook.com/StudentKickOff" title="" target="_blank">Facebook</a>
-        </li>
-        <li class="social-icon social-icon-twitter">
-            <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
-        </li>
-        <li class="social-icon social-icon-instagram">
-            <a href="#" title="">Instagram</a>
-        </li>
-    </ul>
         </div>
     </section>
 
     <section class="white-background">
+        <div class="top-social-icons">
+            <ul class="social-icons">
+                <li class="social-icon social-icon-facebook">
+                    <a href="http://www.facebook.com/StudentKickOff" title="" target="_blank">Facebook</a>
+                </li>
+                <li class="social-icon social-icon-twitter">
+                    <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
+                </li>
+                <li class="social-icon social-icon-instagram">
+                    <a href="#" title="">Instagram</a>
+                </li>
+            </ul>
+        </div>
         <div class="container centered">
             <h1 class="hidden">Praktisch</h1>
             <ul class="feature-list">
@@ -124,6 +126,19 @@
     </section>
 
     <footer class="site-footer" id="site-footer">
+        <div class="top-social-icons">
+            <ul class="social-icons">
+                <li class="social-icon social-icon-facebook">
+                    <a href="http://www.facebook.com/StudentKickOff" title="" target="_blank">Facebook</a>
+                </li>
+                <li class="social-icon social-icon-twitter">
+                    <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
+                </li>
+                <li class="social-icon social-icon-instagram">
+                    <a href="#" title="">Instagram</a>
+                </li>
+            </ul>
+        </div>
         <div class=" container">
             <div class="contact">
                 <div class="contact-logo">
@@ -137,19 +152,7 @@
 
                     <div class="column">
                         <div class="contact-information">
-                            <ul class="social-icons">
-                                <li class="social-icon social-icon-facebook">
-                                    <a href="http://www.facebook.com/StudentKickOff" title="" target="_blank">Facebook</a>
-                                </li>
-                                <li class="social-icon social-icon-twitter">
-                                    <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
-                                </li>
-                                <li class="social-icon social-icon-instagram">
-                                    <a href="#" title="">Instagram</a>
-                                </li>
-                            </ul>
-
-
+                     
                             <h2>Meewerken?</h2>
                             <?php print l('Individueel', 'meewerken/inschrijven', array('attributes' => array('class' => array('button')))); ?>
                             <?php print l('Groep', 'meewerken/groepen', array('attributes' => array('class' => array('button')))); ?>
