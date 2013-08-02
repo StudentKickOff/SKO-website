@@ -357,7 +357,13 @@ fieldset {
       font-size: 1em;
       font-weight: bold;
       padding: .55em 1em .65em;
-      width: 21em; }
+      width: 21em;
+
+      @media only all and (max-width: 500px) {
+        max-width: 18em;
+      }
+
+      }
       input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
       textarea:focus {
         outline: 0; }
