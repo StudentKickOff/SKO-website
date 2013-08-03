@@ -150,6 +150,18 @@ a {
       .feature-list-item:last-child {
         float: right; } }
 
+.feature-list-divider {
+      float: left;
+      margin-top: 65px;
+      width: 2px;
+      height: 50px;
+      background-color: #e7e7e7;
+      
+      @media only all and (max-width: 30em) {
+          display: none;
+      }
+}
+
 .feature-list-item-image {
   margin-bottom: 1em;
   max-width: 100%; }
@@ -660,8 +672,8 @@ h3 {
     .site-header-logo {
       display: block;
       position: absolute;
-      top: -0.25em;
-      left: -1.5em;
+      top: -7px;
+      left: -64px;
       z-index: 999; } }
 
 .site-navigation {

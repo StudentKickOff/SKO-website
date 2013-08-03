@@ -11,6 +11,7 @@
                     9000 Gent
                 </p>
             </li>
+            <li class="feature-list-divider"></li>
             <li class="feature-list-item">
                 <img class="feature-list-item-image" src="<?php print $base_path . path_to_theme(); ?>/assets/images/feature-wanneer.png" />
                 <h2>Wanneer?</h2>
@@ -18,6 +19,7 @@
                     Woensdag 25 september
                 </p>
             </li>
+            <li class="feature-list-divider"></li>
             <li class="feature-list-item">
                 <img class="feature-list-item-image" src="<?php print $base_path . path_to_theme(); ?>/assets/images/feature-hoe-laat.png" />
                 <h2>Hoe laat?</h2>
