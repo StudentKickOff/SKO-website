@@ -745,6 +745,45 @@ h3 {
   .site-navigation-historiek:hover {
     background-position: -619px -105px; }
 
+  .site-navigation-current {
+      
+      a { color: #e9bd4a; }
+      
+      background-image: linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
+      background-image: -o-linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
+      background-image: -moz-linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
+      background-image: -webkit-linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
+      background-image: -ms-linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
+
+      background-image: -webkit-gradient(
+          linear,
+          left bottom,
+          left top,
+          color-stop(1, rgb(36,42,52)),
+          color-stop(0, rgb(42,49,60))
+          );
+      
+      .site-navigation-home {
+          background-position: 1px -105px; 
+      }
+
+      .site-navigation-line-up {
+          background-position: -133px -105px; 
+      }
+
+      .site-navigation-student-village {
+          background-position: -253px -105px; 
+      }
+
+      .site-navigation-praktisch {
+          background-position: -495px -105px; 
+      }
+
+      .site-navigation-historiek {
+          background-position: -619px -105px; 
+      }
+  }  
+  
 @media only all and (min-width: 44.5em) {
   #nav-toggle {
     display: none; } }

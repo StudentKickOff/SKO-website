@@ -7,16 +7,16 @@
             <ul class="horizontal-navigation site-navigation">
                 <!--</li> and starting <li> have to be on the same line
                     because display:inline-block will add whitespace otherwise-->
-                <li class="current horizontal-navigation-item site-navigation-item">
-                    <?php print l('Home', '<front>', array('attributes' => array('class' => array('current site-navigation-home')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item">
-                    <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('current site-navigation-line-up')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item">
-                    <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('current site-navigation-student-village')))); ?>
-                </li><li class="current horizontal-navigation-item site-navigation-item">
-                    <?php print l('Info', 'info', array('attributes' => array('class' => array('current site-navigation-praktisch')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item">
-                    <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('current site-navigation-historiek')))); ?>
+                <li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Nieuws") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Home', '<front>', array('attributes' => array('class' => array('site-navigation-home')))); ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Line-up") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('site-navigation-line-up')))); ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Studentvillage") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('site-navigation-student-village')))); ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Praktisch") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Info', 'info', array('attributes' => array('class' => array('site-navigation-praktisch')))); ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Historiek") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('site-navigation-historiek')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&#9776;</a></li>
             </ul>
         </nav>
