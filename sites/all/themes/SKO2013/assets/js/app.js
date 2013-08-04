@@ -53,7 +53,6 @@ var countdown = function () {
 };
 
 var setupNav = function () {
-    console.log('setup nav');
     if (Modernizr.mq('only all and (max-width: 44.5em)')) {
         $('#nav-toggle a').click(function () {
             $('#site-header').toggleClass('is-expanded');
@@ -126,6 +125,17 @@ $(document).ready(function () {
             });
         }
 
+    });
+    
+    $('#praktisch-meewerken-button').click(function (e) {
+        $('html, body').animate({
+            scrollTop: $("#meewerken-scrollto").offset().top
+        }, 500, function() {
+            $("#meewerken-scrollto").fadeTo(200, 0.2).fadeTo(200, 1);
+        });
+        
+
+        return false;
     });
 
 });

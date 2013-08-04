@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="column">
-                    <div class="contact-information">
+                    <div id="meewerken-scrollto" class="contact-information">
 
                         <h2>Meewerken?</h2>
                         <?php print l('Individueel', 'meewerken/inschrijven', array('attributes' => array('class' => array('button')))); ?>
