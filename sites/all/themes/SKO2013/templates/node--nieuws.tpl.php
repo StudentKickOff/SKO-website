@@ -54,5 +54,7 @@
             </div>
         </div>
     </article>
+    
+    <?php print render($content['flippy_pager']);?> 
 
 <?php endif; ?>

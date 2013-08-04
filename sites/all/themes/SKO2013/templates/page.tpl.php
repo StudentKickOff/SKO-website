@@ -5,7 +5,7 @@
 
 <section>        
     <?php include('includes/social-icons.inc'); ?>
-    <div class="container"  id="scrollTo">
+    <div class="container" id="scrollTo">
         <p class="breadcrumb">
             <?php print $breadcrumb ?>
         </p>
