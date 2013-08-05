@@ -1,5 +1,5 @@
 $(window).load(function() {
-    
+
     // Homepageslider
     $('#slider').flexslider({
         animation: "slide",
@@ -8,15 +8,20 @@ $(window).load(function() {
     });
 
 
-    $('.slider-previous-arrow').click(function(e) {
-        e.preventDefault();
-        $('#slider').flexslider('prev');
-    });
+    if($('#slider').find('.slides .slider-item').length > 1) {
+      $('.slider-previous-arrow').click(function(e) {
+          e.preventDefault();
+          $('#slider').flexslider('prev');
+      });
 
-    $('.slider-next-arrow').click(function(e) {
-        e.preventDefault();
-        $('#slider').flexslider('next');
-    });
+      $('.slider-next-arrow').click(function(e) {
+          e.preventDefault();
+          $('#slider').flexslider('next');
+      });
+    } else {
+      $('.slider-previous-arrow').hide();
+      $('.slider-next-arrow').hide();
+    }
 
     // Partnerslider
     $('#partner-slider').flexslider({
