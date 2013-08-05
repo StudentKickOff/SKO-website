@@ -17,7 +17,7 @@
                     <?php print l('Info', 'info', array('attributes' => array('class' => array('site-navigation-praktisch')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Historiek") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('site-navigation-historiek')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&#9776;</a></li>
+                </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&equiv;</a></li>
             </ul>
         </nav>
     </div>
