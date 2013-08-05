@@ -156,7 +156,7 @@ a {
       width: 2px;
       height: 50px;
       background-color: #e7e7e7;
-      
+
       @media only all and (max-width: 30em) {
           display: none;
       }
@@ -198,25 +198,30 @@ a {
   list-style: none; }
 
 .grid-item {
-  display: inline-block;
+  display: block;
   vertical-align: baseline;
   zoom: 1;
+  max-width: 294px;
   *display: inline;
   *vertical-align: auto;
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 3%;
-  vertical-align: top; }
+  vertical-align: top;
+  margin-right: auto;
+  margin-left: auto; }
   .grid-item:hover .grid-item-image-overlay {
     top: 0px; }
   @media only all and (min-width: 30em) and (max-width: 50em) {
     .grid-item {
+      display: inline-block;
       width: 47%;
       margin-right: 4%; }
       .grid-item:nth-child(2n+2) {
         margin-right: 0; } }
   @media only all and (min-width: 50em) {
     .grid-item {
+      display: inline-block;
       margin-right: 3%;
       width: 30%; }
       .grid-item:nth-child(3n+3) {
@@ -278,7 +283,7 @@ a {
       color: #fff;
       background-color: #242a34; }
 
-    
+
 .pagination-item-overview a {
     padding: 6px;
     padding-top: 6px;
@@ -286,7 +291,7 @@ a {
     padding-bottom: 5px;
     position: relative;
 }
-    
+
 .pagination-item-active a {
   background-color: #e9bd4a; }
 
@@ -626,8 +631,8 @@ h3 {
 
   .button-praktisch {
       width: 152px;
-  }  
-  
+  }
+
 .button-white {
   background-color: #fafafa;
   box-shadow: 0 0.2em 0 #eeeeee;
@@ -755,9 +760,9 @@ h3 {
     background-position: -619px -105px; }
 
   .site-navigation-current {
-      
+
       a { color: #e9bd4a; }
-      
+
       background-image: linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
       background-image: -o-linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
       background-image: -moz-linear-gradient(bottom, rgb(36,42,52) 100%, rgb(42,49,60) 0%);
@@ -771,28 +776,28 @@ h3 {
           color-stop(1, rgb(36,42,52)),
           color-stop(0, rgb(42,49,60))
           );
-      
+
       .site-navigation-home {
-          background-position: 1px -105px; 
+          background-position: 1px -105px;
       }
 
       .site-navigation-line-up {
-          background-position: -133px -105px; 
+          background-position: -133px -105px;
       }
 
       .site-navigation-student-village {
-          background-position: -253px -105px; 
+          background-position: -253px -105px;
       }
 
       .site-navigation-praktisch {
-          background-position: -495px -105px; 
+          background-position: -495px -105px;
       }
 
       .site-navigation-historiek {
-          background-position: -619px -105px; 
+          background-position: -619px -105px;
       }
-  }  
-  
+  }
+
 @media only all and (min-width: 44.5em) {
   #nav-toggle {
     display: none; } }
