@@ -53,14 +53,10 @@ var countdown = function () {
 };
 
 var setupNav = function () {
-    if (Modernizr.mq('only all and (max-width: 44.5em)')) {
-        $('#nav-toggle a').click(function () {
-            $('#site-header').toggleClass('is-expanded');
-            return false;
-        });
-    } else {
-        $('#nav-toggle').die();
-    }
+    $('#nav-toggle a').click(function () {
+        $('#site-header').toggleClass('is-expanded');
+        return false;
+    });
 };
 
 $(document).ready(function () {
@@ -92,7 +88,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
     // Equal height on main and sidebar
     setupNav();
 
@@ -126,14 +122,14 @@ $(document).ready(function () {
         }
 
     });
-    
+
     $('#praktisch-meewerken-button').click(function (e) {
         $('html, body').animate({
             scrollTop: $("#meewerken-scrollto").offset().top
         }, 500, function() {
             $("#meewerken-scrollto").fadeTo(200, 0.2).fadeTo(200, 1);
         });
-        
+
 
         return false;
     });
