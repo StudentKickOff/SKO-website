@@ -27,6 +27,7 @@
  * @ingroup views_templates
  */
 ?>
+<div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
@@ -83,3 +84,4 @@
       <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
+</div>
