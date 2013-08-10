@@ -21,9 +21,7 @@
                     <a href="<?php print $node_url . '#scrollTo'; ?>"><?php print $title; ?></a>
                 </h3>
             </header>
-            <p>
                 <?php print render($content['body']); ?>
-            </p>
             <footer>
                 <span class="author">By <?php print $name; ?></span>
             </footer>
@@ -54,7 +52,7 @@
             </div>
         </div>
     </article>
-    
-    <?php print render($content['flippy_pager']);?> 
+
+    <?php print render($content['flippy_pager']);?>
 
 <?php endif; ?>

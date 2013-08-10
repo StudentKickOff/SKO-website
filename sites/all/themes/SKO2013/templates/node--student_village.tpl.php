@@ -4,8 +4,6 @@
     </a>
     <div class="detail-container">
         <?php print render($content['field_logo']); ?>
-        <p>
-            <?php print render($content['field_infotekst']); ?>
-        </p>
+        <?php print render($content['field_infotekst']); ?>
     </div>
 </article>
