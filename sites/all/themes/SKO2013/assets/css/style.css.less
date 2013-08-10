@@ -550,18 +550,51 @@ fieldset {
   background-position: -188px 0; }
 
 .history-item {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  .detail-container {
+    padding-top: 1em;
+  }
+}
 
 .history-item-toggle {
-  background-image: url(../images/sprite.png);
-  background-repeat: no-repeat;
-  background-position: 100% -932px;
   display: block;
   padding: .3em .7em;
   padding-bottom: .3em !important;
   line-height: 1;
   margin-bottom: 0;
-  text-decoration: none; }
+  text-decoration: none;
+
+  &:after {
+    float: right;
+    display: block;
+    height: 38px;
+    width: 38px;
+    content: "";
+
+    background-color: #E9BD4A;
+    border-radius: 50%;
+    background-image: url(../images/pijltje.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    top: -2px;
+
+  }
+}
+
+.history-item-expanded:after {
+   -webkit-transform:rotate(90deg);
+   -moz-transform:rotate(90deg);
+   -ms-transform:rotate(90deg);
+   -o-transform:rotate(90deg);
+   transform:rotate(90deg);
+}
+
 
 .history-item-expanded .history-item-toggle {
   display: none !important; }
@@ -1041,7 +1074,7 @@ h3 {
 .line-up-item {
   background-image: url(../images/sprite.png);
   background-repeat: no-repeat;
-  background-position: 104% -928px;
+  background-position: 104% -930px;
   font-family: 'League Gothic', sans-serif;
   text-transform: uppercase;
   padding: 0; }

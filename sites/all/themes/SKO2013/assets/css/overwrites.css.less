@@ -19,8 +19,8 @@ div.sb-image {
 .slider-container {
     max-width: 630px;
     border: 15px solid #fff;
-    background-color: black; 
-    
+    background-color: black;
+
     -webkit-box-shadow: 0 0 115px -20px black;
     -moz-box-shadow: 0 0 115px -20px black;
     box-shadow: 0 0 115px -20px black;
@@ -72,7 +72,7 @@ div.sb-image {
     }
 
     .slider-previous-arrow, .slider-next-arrow {
-        display: none; 
+        display: none;
     }
 
 }
@@ -110,7 +110,7 @@ select {
     .contact-form {
         margin-right: 0px;
     }
-    
+
     .column {
         width: 290px !important;
     }
@@ -132,7 +132,7 @@ select {
         background-image: url('../images/pijltjes.png');
         background-repeat: no-repeat;
         background-position: 250px 7px;
-        
+
         &:focus { outline: none; }
     }
 }
@@ -143,7 +143,13 @@ select {
         line-height: 1;
         padding: .7em 1.3em;
         padding-bottom: .7em !important;
-        background-position: 100% -929px;
+    }
+    a:after {
+      position: relative;
+      top: -2px;
+
+      height: 30px;
+      width: 30px;
     }
 }
 
@@ -175,8 +181,8 @@ select {
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
-.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
-html[xmlns] .slides {display: block;} 
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
 * html .slides {height: 1%;}
 
 /* No JavaScript Fallback */

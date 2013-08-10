@@ -105,22 +105,11 @@ $(document).ready(function () {
     });
 
     // History accordeon
-    $('.history-item:not(.history-item-expanded)').find('.detail-container').hide();
+    $('.history-item').find('.detail-container').hide();
 
     $('.history-item-toggle').click(function (e) {
         e.preventDefault();
-
-        var that = $(this);
-
-        if($('.history-item-expanded').length == 0) {
-            that.closest('.history-item').addClass('history-item-expanded').find('.detail-container').slideDown(220);
-        } else {
-             $('.history-item-expanded').find('.detail-container').slideUp(220, function () {
-                $('.history-item-expanded').removeClass('history-item-expanded');
-                that.closest('.history-item').addClass('history-item-expanded').find('.detail-container').slideDown(220);
-            });
-        }
-
+        $(this).toggleClass("history-item-expanded").parent().children(".detail-container").slideToggle();
     });
 
     $('#praktisch-meewerken-button').click(function (e) {
