@@ -3,7 +3,7 @@
     <head>
         <title>Maak mij</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">   
+        <meta charset="utf-8">
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -12,9 +12,9 @@
         <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gegevens</h1>
         <form class="form-horizontal" action="generate.php" method="post">
             <div class="control-group">
-                <label class="control-label" for="inputEmail">Naam</label>
+                <label class="control-label" for="inputEmail">Voornaam Achternaam</label>
                 <div class="controls">
-                    <input type="text" name="naam" placeholder="Naam Voornaam" required>
+                    <input type="text" name="naam" placeholder="Voornaam Achternaam" required>
                 </div>
             </div>
             <div class="control-group">
