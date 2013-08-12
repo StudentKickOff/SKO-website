@@ -20,7 +20,7 @@ var countdown = function () {
         hours = 0,
         minutes = 0,
         strings = {},
-        diff = Math.round(moment('2013092612', 'YYYYMMDDHH').diff(moment()) / 1000);
+        diff = Math.round(moment('2013092512', 'YYYYMMDDHH').diff(moment()) / 1000);
 
     // Days
     days = Math.floor(diff / 86400);
