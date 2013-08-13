@@ -49,6 +49,7 @@
                     <h1 class="news-heading"><?php print $title; ?></h1>
                 </header>
                 <?php print render($content['body']); ?>
+                <?php include('includes/share-icons.inc'); ?>
             </div>
         </div>
     </article>

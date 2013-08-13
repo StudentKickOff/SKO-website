@@ -43,6 +43,7 @@
                     </h2>
                 </header>
                 <?php print render($content['field_infotekst']); ?>
+                <?php include('includes/share-icons.inc'); ?>
             </div>
         </div>
     </article>

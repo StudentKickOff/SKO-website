@@ -3,7 +3,7 @@
 <?php include('includes/subheader-small.inc'); ?>
 
 
-<section>        
+<section>
     <?php include('includes/social-icons.inc'); ?>
     <div class="container" id="scrollTo">
         <p class="breadcrumb">
@@ -26,7 +26,7 @@
                     <?php print render($page['columnright']); ?>
                 </div>
             </div>
-        <?php else : ?> 
+        <?php else : ?>
             <?php print render($page['content']); ?>
         <?php endif; ?>
     </div>
