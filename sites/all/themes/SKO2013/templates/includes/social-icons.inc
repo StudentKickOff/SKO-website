@@ -7,7 +7,7 @@
             <a href="http://twitter.com/studentkickoff" title="" target="_blank">Twitter</a>
         </li>
         <li class="social-icon social-icon-instagram">
-            <a href="#" title="">Instagram</a>
+            <a href="http://searchinstagram.com/sko13" title="" target="_blank">Instagram</a>
         </li>
     </ul>
 </div>
