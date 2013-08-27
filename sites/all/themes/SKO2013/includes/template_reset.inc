@@ -1,3 +1,4 @@
+<?php
 // Removes the basic Drupal CSS
 function SKO2013_css_alter(&$css) {
     // Remove defaults.css file.

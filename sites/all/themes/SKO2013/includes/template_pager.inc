@@ -1,3 +1,4 @@
+<?php
 function SKO2013_pager($variables) {
     $tags = $variables['tags'];
     $element = $variables['element'];

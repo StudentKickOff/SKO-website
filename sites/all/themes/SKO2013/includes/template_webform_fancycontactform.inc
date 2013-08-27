@@ -1,3 +1,4 @@
+<?php
 // Fancy webform on bottom
 function SKO2013_form_alter(&$form, &$form_state, $form_id) {
     if ($form_id == "webform_client_form_51") { // Ex: "webform_client_form_33"

@@ -1,7 +1,7 @@
 <?php
-require('includes/reset.inc');
-require('includes/preprocess.inc');
-require('includes/breadcrumbs.inc');
-require('includes/pager.inc');
-require('includes/webform_fancycontactform.inc');
+require('includes/template_reset.inc');
+require('includes/template_preprocess.inc');
+require('includes/template_breadcrumbs.inc');
+require('includes/template_pager.inc');
+require('includes/template_webform_fancycontactform.inc');
 

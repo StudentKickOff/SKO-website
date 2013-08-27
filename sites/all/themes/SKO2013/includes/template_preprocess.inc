@@ -1,3 +1,4 @@
+<?php
 // Responsiveness
 function SKO2013_preprocess_html(&$vars) {
     $viewport = array(
