@@ -1,0 +1,7 @@
+name = Webform Validation All or None
+description = Adds a rule that demands that the fieldset is fully or not filled in
+core = 7.x
+version = "7.x-0.1-dev"
+package = Webform
+dependencies[] = webform
+dependencies[] = webform_validation

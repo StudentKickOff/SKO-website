@@ -1,0 +1,87 @@
+<?php
+
+function _webform_importmedewerkers_process_solo($node, $submission) {
+    $fields = array();
+
+    foreach($submission->data as $key => $value) {
+        $fields[$node->webform['components'][$key]['form_key']] = $value;
+    }
+
+    _webform_importmedewerkers_filter_fields($fields);
+    _webform_importmedewerkers_process_shifts($fields['shiften']);
+    _webform_importmedewerkers_normalize_fields($fields);
+    $query = _webform_importmedewerkers_build_query($fields);
+
+    _webform_importmedewerkers_send_api_request($query);
+}
+
+function _webform_importmedewerkers_send_api_request($query) {
+    $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
+    $xml = file_get_contents($query, false, $context);
+    $xml = simplexml_load_string($xml);
+
+    $result_attributes = $xml->attributes();
+    if($result_attributes['Success'] == "False") {
+        dpm("Ohnoes: " . $result_attributes['Error']);
+        _webform_importmedewerkers_log($result_attributes['Error'], array(), WATCHDOG_ERROR);
+    }
+}
+
+function _webform_importmedewerkers_build_query(&$fields) {
+    return "http://planning.studentkickoff.be/api/AddMedewerker?token=skoweb"
+        . "&voornaam=" .              implode($fields['voornaam'])
+        . "&naam=" .                  implode($fields['familienaam'])
+        . "&geboortedatum=" .         implode($fields['geboortedatum'])
+        . "&gsm=" .                   implode($fields['gsm_nummer'])
+        . "&email=" .                 implode($fields['e_mail'])
+        . "&onderwijsinstelling=" .   implode($fields['onderwijsinstelling'])
+        . "&tshirtMaat=" .            implode($fields['maat_t_shirt'])
+        . "&rijbewijs=" .                     $fields['rijbewijs']
+        . "&voorkeur=" .                      $fields['voorkeur']
+        . "&opmerkingen=" . urlencode(implode($fields['opmerkingen']))
+        . "&vereniging=" .                    $fields['vereniging']
+        . "&verantwoordelijkeVereniging=" .   $fields['verantwoordelijkeVereniging']
+        . "&shiften=" .          implode(',', $fields['shiften']);
+}
+function _webform_importmedewerkers_normalize_fields(&$fields) {
+    // Rijbewijs ja/nee -> 0/1
+    $fields['rijbewijs'] = ($fields['rijbewijs'] == "ja") ? "1" : "0";
+
+    // Add empty fields
+    $fields['vereniging'] = "";
+    $fields['verantwoordelijkeVereniging'] = "0";
+
+    $fields['voorkeur'] = "";
+}
+
+function _webform_importmedewerkers_process_shifts(&$shifts) {
+    foreach($shifts as $i => $shift) {
+        $splitted = preg_split('/[ :u\-]/', $shift);
+
+        if(strpos($shift, ' ') === false) {
+            // Showday. Input: xxuyy-zzuaa
+            $shifts[$i] = "2013-09-25_" . $splitted[0] . ":" . $splitted[1];
+        } else {
+            // Non showday. Input: dd-MM-yyyy hh:mm
+            $shifts[$i] = $splitted[2] . "-" . $splitted[1] . "-" . $splitted[0] . "_" . $splitted[3] . ":" . $splitted[4];
+        }
+    }
+}
+
+function _webform_importmedewerkers_filter_fields(&$fields) {
+
+    // Remove unused fields
+    unset($fields['herhaal_e_mail']);
+    unset($fields['wanneer_wil_je_meehelpen']);
+    unset($fields['ik_ga_akkoord_met_het_reglement']);
+
+    // Merge the shift arrays
+    $fields['shiften'] = array_filter(array_merge(
+        $fields['beschikbaarheid_voor_en_na_student_kick_off'],
+        $fields['beschikbaarheid_tijdens_student_kick_off']
+    ));
+
+    unset($fields['beschikbaarheid_voor_en_na_student_kick_off']);
+    unset($fields['beschikbaarheid_tijdens_student_kick_off']);
+}
+

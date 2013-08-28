@@ -1,0 +1,17 @@
+<?php
+
+
+function webform_importmedewerkers_webform_submission_insert($node, $submission) {
+    module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions');
+    module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_utils');
+
+    try {
+
+        if($node->vid == 53) {
+            _webform_importmedewerkers_process_solo($node, $submission);
+        }
+    } catch (Exception $e) {
+        _webform_importmedewerkers_log($e->getMessage(), array(), WATCHDOG_ERROR);
+    }
+}
+

@@ -1,0 +1,45 @@
+<?php
+
+function webform_validation_allornone_webform_validation_validators() {
+    return array(
+        'complete_set' => array(
+            'name' => "Complete Set",
+            'component_types' => array('all'),
+            'description' => t("Validates that all the fields in the set are completed or that none of them are"),
+        ),
+    );
+}
+
+function webform_validation_allornone_webform_validation_validate($validator_name, $items, $components, $rule) {
+    if ($items) {
+        $errors = array();
+        switch ($validator_name) {
+        case 'complete_set':
+            foreach ($items as $key => $val) {
+                if (is_array($val)) {
+                    // make sure to flatten arrays first
+                    $items[$key] = _nocommas_flatten_array($val);
+                }
+            }
+            // $components have no entries at all or should all be completed
+            if ((count(array_filter($items)) != 0) && (count(array_filter($items))!=count($items))) {
+                $keys = array_keys($items);
+                $names = array();
+                foreach ($keys as $value) {
+                    $names[] = $components[$value]['name'];
+                }
+                return array($keys[0] => t('Controleer als alle velden bij elk groepslid zijn ingevuld!'));
+            }
+            break;
+        }
+    }
+}
+
+function _nocommas_flatten_array($val) {
+    if (is_array($val)) {
+        $arr = array_filter($val, '_webform_validation_check_false');
+        return implode('', $arr);
+    }
+    return $val;
+}
+
