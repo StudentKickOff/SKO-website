@@ -47,7 +47,7 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
 }
 
 function _webform_importmedewerkers_build_query(&$fields) {
-    $url = "http://planning.studentkickoff.be/api/AddMedewerker?token=skoweb"
+    return "http://planning.studentkickoff.be/api/AddMedewerker?token=skoweb"
         . "&voornaam=" .              toAscii(implode($fields['voornaam']))
         . "&naam=" .                  toAscii(implode($fields['familienaam']))
         . "&geboortedatum=" .         toAscii(implode($fields['geboortedatum']))
@@ -61,8 +61,6 @@ function _webform_importmedewerkers_build_query(&$fields) {
         . "&vereniging=" .                    toAscii($fields['vereniging'])
         . "&verantwoordelijkeVereniging=" .   toAscii($fields['verantwoordelijkeVereniging'])
         . "&shiften=" .          implode(',', $fields['shiften']);
-    dpm($url);
-    return $url;
 }
 
 function toAscii($str) {
