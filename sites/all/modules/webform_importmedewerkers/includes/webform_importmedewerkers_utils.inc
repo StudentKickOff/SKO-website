@@ -47,27 +47,27 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
 }
 
 function _webform_importmedewerkers_build_query(&$fields) {
-    return "http://planning.studentkickoff.be/api/AddMedewerker?token=skoweb"
+    $url = "http://planning.studentkickoff.be/api/AddMedewerker?token=skoweb"
         . "&voornaam=" .              toAscii(implode($fields['voornaam']))
         . "&naam=" .                  toAscii(implode($fields['familienaam']))
         . "&geboortedatum=" .         toAscii(implode($fields['geboortedatum']))
-        . "&gsm=" .                   toAscii(implode($fields['gsm_nummer']))
+        . "&gsm=" . preg_replace('/[^0-9]/', '', toAscii(implode($fields['gsm_nummer'])))
         . "&email=" .                 toAscii(implode($fields['e_mail']))
         . "&onderwijsinstelling=" .   toAscii(implode($fields['onderwijsinstelling']))
         . "&tshirtMaat=" .            toAscii(implode($fields['maat_t_shirt']))
         . "&rijbewijs=" .                     toAscii($fields['rijbewijs'])
         . "&voorkeur=" .                      toAscii($fields['voorkeur'])
-        . "&opmerkingen=" . toAscii(urlencode(implode($fields['opmerkingen'])))
+        . "&opmerkingen=" .           toAscii(implode($fields['opmerkingen']))
         . "&vereniging=" .                    toAscii($fields['vereniging'])
         . "&verantwoordelijkeVereniging=" .   toAscii($fields['verantwoordelijkeVereniging'])
-        . "&shiften=" .          toAscii(implode(',', $fields['shiften']));
+        . "&shiften=" .          implode(',', $fields['shiften']);
+    dpm($url);
+    return $url;
 }
 
 function toAscii($str) {
-    $str = strtr(utf8_decode($str),
+    return rawurlencode(strtr(utf8_decode($str),
         utf8_decode(
         'ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ'),
-        'SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy');
-    dpm($str);
-    return $str;
+        'SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy'));
 }
