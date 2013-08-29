@@ -2,16 +2,25 @@
 
 
 function webform_importmedewerkers_webform_submission_insert($node, $submission) {
-    module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions');
-    module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_utils');
-
-    try {
-
-        if($node->vid == 53) {
-            _webform_importmedewerkers_process_solo($node, $submission);
-        }
-    } catch (Exception $e) {
-        _webform_importmedewerkers_log($e->getMessage(), array(), WATCHDOG_ERROR);
-    }
+    _webform_importmedewerkers_process($node, $submission);
 }
 
+function webform_importmedewerkers_webform_submission_update($node, $submission) {
+    _webform_importmedewerkers_process($node, $submission);
+}
+
+function _webform_importmedewerkers_process($node, $submission) {
+            module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_utils');
+
+    try {
+        if($node->vid == 53) {
+            module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions_solo');
+            _webform_importmedewerkers_process_solo($node, $submission);
+        } else if($node->vid == 55) {
+            module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions_group');
+            _webform_importmedewerkers_process_group($node, $submission);
+        }
+    } catch (Exception $e) {
+        _webform_importmedewerkers_log($e->getMessage() . "<br /><pre>" . print_r($submission, true) . "</pre>", WATCHDOG_ERROR);
+    }
+}

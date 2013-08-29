@@ -12,18 +12,28 @@ function _webform_importmedewerkers_process_solo($node, $submission) {
     _webform_importmedewerkers_normalize_fields($fields);
     $query = _webform_importmedewerkers_build_query($fields);
 
-    _webform_importmedewerkers_send_api_request($query);
+    // We pass the submission and fields here too for logging
+    _webform_importmedewerkers_send_api_request($query, $submission, $fields);
 }
 
-function _webform_importmedewerkers_send_api_request($query) {
+function _webform_importmedewerkers_send_api_request($query, $submission, $fields) {
     $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
     $xml = file_get_contents($query, false, $context);
     $xml = simplexml_load_string($xml);
 
-    $result_attributes = $xml->attributes();
-    if($result_attributes['Success'] == "False") {
-        dpm("Ohnoes: " . $result_attributes['Error']);
-        _webform_importmedewerkers_log($result_attributes['Error'], array(), WATCHDOG_ERROR);
+    if(!$xml) {
+        _webform_importmedewerkers_log("Geen XML resultaat" . "<br />"
+            . "<pre>" . print_r($submission, true) . "</pre><br />"
+            . "<pre>" . print_r($fields, true) . "</pre>",
+                WATCHDOG_ERROR);
+    } else {
+        $result_attributes = $xml->attributes();
+        if($result_attributes['Success'] == "False") {
+            _webform_importmedewerkers_log($result_attributes['Error'] . "<br />"
+                . "<pre>" . print_r($submission, true) . "</pre><br />"
+                . "<pre>" . print_r($fields, true) . "</pre>",
+                    WATCHDOG_ERROR);
+        }
     }
 }
 
@@ -43,9 +53,10 @@ function _webform_importmedewerkers_build_query(&$fields) {
         . "&verantwoordelijkeVereniging=" .   $fields['verantwoordelijkeVereniging']
         . "&shiften=" .          implode(',', $fields['shiften']);
 }
+
 function _webform_importmedewerkers_normalize_fields(&$fields) {
     // Rijbewijs ja/nee -> 0/1
-    $fields['rijbewijs'] = ($fields['rijbewijs'] == "ja") ? "1" : "0";
+    $fields['rijbewijs'] = ($fields['rijbewijs'][0] == "ja") ? "1" : "0";
 
     // Add empty fields
     $fields['vereniging'] = "";
