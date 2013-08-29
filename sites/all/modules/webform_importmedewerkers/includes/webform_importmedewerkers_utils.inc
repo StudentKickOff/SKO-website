@@ -20,8 +20,8 @@ function _webform_importmedewerkers_process_shifts(&$shifts) {
 
 function _webform_importmedewerkers_send_api_request($query, $submission, $fields) {
     $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
-    $xml = file_get_contents($query, false, $context);
-    $xml = simplexml_load_string($xml);
+    $xml_string = file_get_contents($query, false, $context);
+    $xml = simplexml_load_string($xml_string);
 
     if(!$xml) {
         _webform_importmedewerkers_log("Geen XML resultaat" . "<br />"
@@ -32,26 +32,42 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
         $result_attributes = $xml->attributes();
         if($result_attributes['Success'] == "False") {
             _webform_importmedewerkers_log($result_attributes['Error'] . "<br />"
+                . "<pre>" . htmlspecialchars($xml_string) . "</pre><br />"
                 . "<pre>" . print_r($submission, true) . "</pre><br />"
                 . "<pre>" . print_r($fields, true) . "</pre>",
                     WATCHDOG_ERROR);
+        } else if ($result_attributes['Success'] == "True") {
+            _webform_importmedewerkers_log(
+                "Invoegen geslaagd voor " . $fields['voornaam'][0] . " " . $fields['familienaam'][0] . "<br />"
+                . "<pre>" . htmlspecialchars($xml_string) . "</pre><br />"
+                . "<pre>" . print_r($fields, true) . "</pre>",
+                    WATCHDOG_INFO);
         }
     }
 }
 
 function _webform_importmedewerkers_build_query(&$fields) {
     return "http://planning.studentkickoff.be/api/AddMedewerker?token=skoweb"
-        . "&voornaam=" .              implode($fields['voornaam'])
-        . "&naam=" .                  implode($fields['familienaam'])
-        . "&geboortedatum=" .         implode($fields['geboortedatum'])
-        . "&gsm=" .                   implode($fields['gsm_nummer'])
-        . "&email=" .                 implode($fields['e_mail'])
-        . "&onderwijsinstelling=" .   implode($fields['onderwijsinstelling'])
-        . "&tshirtMaat=" .            implode($fields['maat_t_shirt'])
-        . "&rijbewijs=" .                     $fields['rijbewijs']
-        . "&voorkeur=" .                      $fields['voorkeur']
-        . "&opmerkingen=" . urlencode(implode($fields['opmerkingen']))
-        . "&vereniging=" .                    $fields['vereniging']
-        . "&verantwoordelijkeVereniging=" .   $fields['verantwoordelijkeVereniging']
-        . "&shiften=" .          implode(',', $fields['shiften']);
+        . "&voornaam=" .              toAscii(implode($fields['voornaam']))
+        . "&naam=" .                  toAscii(implode($fields['familienaam']))
+        . "&geboortedatum=" .         toAscii(implode($fields['geboortedatum']))
+        . "&gsm=" .                   toAscii(implode($fields['gsm_nummer']))
+        . "&email=" .                 toAscii(implode($fields['e_mail']))
+        . "&onderwijsinstelling=" .   toAscii(implode($fields['onderwijsinstelling']))
+        . "&tshirtMaat=" .            toAscii(implode($fields['maat_t_shirt']))
+        . "&rijbewijs=" .                     toAscii($fields['rijbewijs'])
+        . "&voorkeur=" .                      toAscii($fields['voorkeur'])
+        . "&opmerkingen=" . toAscii(urlencode(implode($fields['opmerkingen'])))
+        . "&vereniging=" .                    toAscii($fields['vereniging'])
+        . "&verantwoordelijkeVereniging=" .   toAscii($fields['verantwoordelijkeVereniging'])
+        . "&shiften=" .          toAscii(implode(',', $fields['shiften']));
+}
+
+function toAscii($str) {
+    $str = strtr(utf8_decode($str),
+        utf8_decode(
+        'ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ'),
+        'SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy');
+    dpm($str);
+    return $str;
 }
