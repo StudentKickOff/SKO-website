@@ -25,6 +25,7 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
 
     if(!$xml) {
         _webform_importmedewerkers_log("Geen XML resultaat" . "<br />"
+            . "<pre>" . htmlspecialchars($xml_string) . "</pre><br />"
             . "<pre>" . print_r($submission, true) . "</pre><br />"
             . "<pre>" . print_r($fields, true) . "</pre>",
                 WATCHDOG_ERROR);
