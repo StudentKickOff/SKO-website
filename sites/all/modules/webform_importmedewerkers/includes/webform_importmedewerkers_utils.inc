@@ -52,7 +52,7 @@ function _webform_importmedewerkers_build_query(&$fields) {
         . "&voornaam=" .              toAscii(implode($fields['voornaam']))
         . "&naam=" .                  toAscii(implode($fields['familienaam']))
         . "&geboortedatum=" .         toAscii(implode($fields['geboortedatum']))
-        . "&gsm=" . preg_replace('/[^0-9]/', '', toAscii(implode($fields['gsm_nummer'])))
+        . "&gsm=" . toAscii(preg_replace('/[^0-9]/', '', implode($fields['gsm_nummer'])))
         . "&email=" .                 toAscii(implode($fields['e_mail']))
         . "&onderwijsinstelling=" .   toAscii(implode($fields['onderwijsinstelling']))
         . "&tshirtMaat=" .            toAscii(implode($fields['maat_t_shirt']))
