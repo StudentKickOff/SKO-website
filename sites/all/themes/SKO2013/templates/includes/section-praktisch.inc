@@ -29,6 +29,6 @@
             </li>
         </ul>
         <?php print l('Meer praktische info', 'info', array('attributes' => array('class' => array('button button-praktisch ')))); ?>
-        <?php print l('Meewerken?', '', array('attributes' => array('class' => array('button button-praktisch button-yellow'), 'id' => 'praktisch-meewerken-button'))); ?>
+        <?php print l('Meewerken?', 'meewerken', array('attributes' => array('class' => array('button button-praktisch button-yellow'), 'id' => 'praktisch-meewerken-button'))); ?>
     </div>
 </section>

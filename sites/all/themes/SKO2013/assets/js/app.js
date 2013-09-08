@@ -112,15 +112,4 @@ $(document).ready(function () {
         $(this).toggleClass("history-item-expanded").parent().children(".detail-container").slideToggle();
     });
 
-    $('#praktisch-meewerken-button').click(function (e) {
-        $('html, body').animate({
-            scrollTop: $("#meewerken-scrollto").offset().top
-        }, 500, function() {
-            $("#meewerken-scrollto").fadeTo(200, 0.2).fadeTo(200, 1);
-        });
-
-
-        return false;
-    });
-
 });
