@@ -25,6 +25,7 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
 
     if(!$xml) {
         _webform_importmedewerkers_log("Geen XML resultaat" . "<br />"
+            . "<pre>" . $query . "</pre><br />"
             . "<pre>" . htmlspecialchars($xml_string) . "</pre><br />"
             . "<pre>" . print_r($submission, true) . "</pre><br />"
             . "<pre>" . print_r($fields, true) . "</pre>",
@@ -33,6 +34,7 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
         $result_attributes = $xml->attributes();
         if($result_attributes['Success'] == "False") {
             _webform_importmedewerkers_log($result_attributes['Error'] . "<br />"
+                . "<pre>" . $query . "</pre><br />"
                 . "<pre>" . htmlspecialchars($xml_string) . "</pre><br />"
                 . "<pre>" . print_r($submission, true) . "</pre><br />"
                 . "<pre>" . print_r($fields, true) . "</pre>",
@@ -40,6 +42,7 @@ function _webform_importmedewerkers_send_api_request($query, $submission, $field
         } else if ($result_attributes['Success'] == "True") {
             _webform_importmedewerkers_log(
                 "Invoegen geslaagd voor " . $fields['voornaam'][0] . " " . $fields['familienaam'][0] . "<br />"
+                . "<pre>" . $query . "</pre><br />"
                 . "<pre>" . htmlspecialchars($xml_string) . "</pre><br />"
                 . "<pre>" . print_r($fields, true) . "</pre>",
                     WATCHDOG_INFO);
@@ -65,7 +68,7 @@ function _webform_importmedewerkers_build_query(&$fields) {
 }
 
 function toAscii($str) {
-    return rawurlencode(strtr(utf8_decode($str),
+    return rawurlencode(strtr(utf8_decode(trim($str)),
         utf8_decode(
         'ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ'),
         'SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy'));
