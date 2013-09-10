@@ -24,7 +24,7 @@ function _webform_importmedewerkers_normalize_fields(&$fields) {
     $fields['vereniging'] = "";
     $fields['verantwoordelijkeVereniging'] = "0";
 
-    $fields['voorkeur'] = "";
+    $fields['voorkeur'] = (isset($fields['voorkeur'])) ? $fields['voorkeur'][0] : "";
 }
 
 
@@ -44,4 +44,3 @@ function _webform_importmedewerkers_filter_fields(&$fields) {
     unset($fields['beschikbaarheid_voor_en_na_student_kick_off']);
     unset($fields['beschikbaarheid_tijdens_student_kick_off']);
 }
-
