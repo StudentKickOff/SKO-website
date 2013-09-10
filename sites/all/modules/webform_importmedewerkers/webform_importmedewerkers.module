@@ -13,7 +13,7 @@ function _webform_importmedewerkers_process($node, $submission) {
             module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_utils');
 
     try {
-        if($node->vid == 53) {
+        if($node->vid == 53 || $node->vid == 129) {
             module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions_solo');
             _webform_importmedewerkers_process_solo($node, $submission);
         } else if($node->vid == 55) {
