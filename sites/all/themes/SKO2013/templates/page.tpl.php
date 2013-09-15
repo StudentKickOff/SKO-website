@@ -22,7 +22,7 @@
                     <?php print render($page['columnleft']); ?>
                 </div>
                 <div class="column column-no-padding white-background">
-                    <h1>Second Stage</h1>
+                    <h1>2nd stage by Decadance & Charlatan</h1>
                     <?php print render($page['columnright']); ?>
                 </div>
             </div>
