@@ -42,7 +42,11 @@
                     <h2 class="line-up-detail-timespan">
                         <?php
                             $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
-                            print 'Van ' . $splitted[0] . " tot " . $splitted[2];
+                            if(count($splitted) < 3) {
+                              print 'Van ??u?? tot ??u??';
+                            } else {
+                              print 'Van ' . $splitted[0] . " tot " . $splitted[2];
+                            }
                         ?>
                     </h2>
                 </header>
