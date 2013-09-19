@@ -4,7 +4,7 @@
             <?php
                 $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
                 if(count($splitted) < 3) {
-                    print "??u??-??u??";
+                    print "TBD";
                 } else {
                     print $splitted[0] . "-" . $splitted[2];
                 }
@@ -43,7 +43,7 @@
                         <?php
                             $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
                             if(count($splitted) < 3) {
-                              print 'Van ??u?? tot ??u??';
+                              print 'To be decided';
                             } else {
                               print 'Van ' . $splitted[0] . " tot " . $splitted[2];
                             }
