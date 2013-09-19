@@ -3,7 +3,11 @@
         <span class="line-up-item-timespan">
             <?php
                 $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
-                print $splitted[0] . "-" . $splitted[2];
+                if(count($splitted) < 3) {
+                    print "??u??-??u??";
+                } else {
+                    print $splitted[0] . "-" . $splitted[2];
+                }
             ?>
         </span>
         <span class="line-up-item-artist"><?php print $title; ?></span>
