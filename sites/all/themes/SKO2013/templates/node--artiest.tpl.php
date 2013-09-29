@@ -3,9 +3,7 @@
         <span class="line-up-item-timespan">
             <?php
                 $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
-                if(count($splitted) < 3) {
-                    print "TBD";
-                } else {
+                if(count($splitted) >= 3) {
                     print $splitted[0] . "-" . $splitted[2];
                 }
             ?>
@@ -42,9 +40,7 @@
                     <h2 class="line-up-detail-timespan">
                         <?php
                             $splitted = preg_split('/ /', trim(strip_tags(render($content['field_tijd']))));
-                            if(count($splitted) < 3) {
-                              print 'To be decided';
-                            } else {
+                            if(count($splitted) >= 3) {
                               print 'Van ' . $splitted[0] . " tot " . $splitted[2];
                             }
                         ?>
