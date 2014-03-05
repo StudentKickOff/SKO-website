@@ -28,6 +28,7 @@ function _webform_defaults_file() {
       'description' => '',
       'attributes' => array(),
       'private' => FALSE,
+      'analysis' => FALSE,
     ),
   );
 }
@@ -314,7 +315,7 @@ function _webform_render_file($component, $value = NULL, $filter = TRUE) {
 
   $element = array(
     '#type' => 'managed_file',
-    '#title' => $filter ? _webform_filter_xss($component['name']) : $component['name'],
+    '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
     '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
     '#required' => $component['required'],
     '#default_value' => isset($value[0]) ? $value[0] : NULL,
@@ -326,7 +327,7 @@ function _webform_render_file($component, $value = NULL, $filter = TRUE) {
     '#pre_render' => array_merge(element_info_property('managed_file', '#pre_render'), array('webform_file_allow_access')),
     '#upload_location' => $component['extra']['scheme'] . '://webform/' . $component['extra']['directory'],
     '#progress_indicator' => $component['extra']['progress_indicator'],
-    '#description' => $filter ? _webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
+    '#description' => $filter ? webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
     '#weight' => $component['weight'],
     '#theme_wrappers' => array('webform_element'),
     '#translatable' => array('title', 'description'),
@@ -443,8 +444,11 @@ function _webform_analysis_file($component, $sids = array()) {
 
   $rows[0] = array(t('Left Blank'), ($submissions - $nonblanks));
   $rows[1] = array(t('User uploaded file'), $nonblanks);
-  $rows[2] = array(t('Average uploaded file size'), ($sizetotal != 0 ? (int) (($sizetotal/$nonblanks)/1024) . ' KB' : '0'));
-  return $rows;
+  $other[0] = array(t('Average uploaded file size'), ($sizetotal != 0 ? (int) (($sizetotal/$nonblanks)/1024) . ' KB' : '0'));
+  return array(
+    'table_rows' => $rows,
+    'other_data' => $other,
+  );
 }
 
 /**

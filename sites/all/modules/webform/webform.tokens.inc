@@ -41,7 +41,7 @@ function webform_token_info() {
   );
   $info['tokens']['submission']['values'] = array(
     'name' => t('Webform submission values'),
-    'description' => t('Webform tokens from submitted data. Replace the "?" with the "field key", including any parent field keys separated by colons. Tokens include the field label and value. Append ":nolabel" for just the value.'),
+    'description' => t('Webform tokens from submitted data. Replace the "?" with the "field key", including any parent field keys separated by colons. You may append ":label" for just the label or ":withlabel" for both the label and value together.'),
     'dynamic' => TRUE,
   );
 
@@ -69,10 +69,10 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
   if ($type == 'submission' && !empty($data['webform-submission'])) {
     // Prepare all the submission data that we will likely need more than once.
     $submission = $data['webform-submission'];
-    $node = $data['node'] ? $data['node'] : node_load($submission->nid);
+    $node = isset($data['node']) ? $data['node'] : node_load($submission->nid);
     $email = isset($data['webform-email']) ? $data['webform-email'] : NULL;
-    $format = isset($email['html']) && $email['html'] ? 'html' : 'text';
-    $submission_renderable = webform_submission_render($node, $submission, $email, $format);
+    $excluded_components = isset($email['excluded_components']) ? $email['excluded_components'] : array();
+    $format = $sanitize ? 'html' : 'text';
 
     // Replace individual tokens that have an exact replacement.
     foreach ($tokens as $name => $original) {
@@ -98,6 +98,7 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
           $replacements[$original] = url("node/{$node->nid}/submission/{$submission->sid}/edit", $url_options);
           break;
         case 'values':
+          $submission_renderable = webform_submission_render($node, $submission, $email, $format, $excluded_components);
           $replacements[$original] = drupal_render($submission_renderable);
           break;
       }
@@ -105,6 +106,10 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
 
     // Webform submission tokens for individual components.
     if ($value_tokens = token_find_with_prefix($tokens, 'values')) {
+      // Get the full submission renderable without $excluded_components so that
+      // individually referenced values are available.
+      $submission_renderable = webform_submission_render($node, $submission, $email, $format);
+
       foreach ($value_tokens as $name => $original) {
         foreach ($node->webform['components'] as $cid => $component) {
           // Build the list of parents for this component.
@@ -121,7 +126,11 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
               $modifier = substr($name, strrpos($name, ':') + 1);
               // TODO: Allow components to provide additional modifiers per
               // type, i.e. key, day, hour, minute, etc.
-              $available_modifiers = array('nolabel');
+              $available_modifiers = array(
+                'label',
+                'withlabel',
+                'nolabel',
+              );
               if (strcmp($name, $parent_token . ':' . $modifier) === 0 && in_array($modifier, $available_modifiers)) {
                 $match = TRUE;
               }
@@ -134,18 +143,35 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
               // Drill down into the renderable to find the element.
               $display_element = $submission_renderable;
               foreach ($parents as $parent) {
-                $display_element = $display_element[$parent];
+                if (isset($display_element[$parent])) {
+                  $display_element = $display_element[$parent];
+                }
+                // Sometimes an element won't exist in the submission renderable
+                // due to conditional logic. If not found, skip that element.
+                else {
+                  $display_element = FALSE;
+                  break;
+                }
               }
-              // Remove theme wrappers for the nolabel modifier.
-              if ($modifier === 'nolabel') {
-                $display_element['#theme_wrappers'] = array();
+              if ($display_element) {
+                // Individual tokens always have access granted even if they're
+                // not displayed when printing the whole renderable.
+                $display_element['#access'] = TRUE;
+  
+                if ($modifier === 'label') {
+                  $replacements[$original] = webform_filter_xss($display_element['#title']);
+                }
+                else {
+                  // Remove theme wrappers for the nolabel modifier.
+                  if ($modifier === 'nolabel' || empty($modifier)) {
+                    $display_element['#theme_wrappers'] = array();
+                  }
+                  $replacements[$original] = render($display_element);
+                }
+                break;
               }
-              // Individual tokens always have access granted even if they're
-              // not displayed when printing the whole renderable.
-              $display_element['#access'] = TRUE;
-              $replacements[$original] = render($display_element);
-              break;
             }
+
           }
         }
 

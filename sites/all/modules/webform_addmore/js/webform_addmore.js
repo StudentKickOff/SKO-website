@@ -5,10 +5,6 @@
 Drupal.behaviors.webform_addmore = {
   attach: function(context) {
     function fieldsetRepeater(container, fieldsetSelecter, addBtnTxt, delBtnTxt, numberFirstShown) {
-      if ($(fieldsetSelecter).parent().find('input.add-more').length) {
-        return;
-      }
-
       var collections = Drupal.settings.webform_addmore.collections;
 
       if (collections.length == 0) {
@@ -25,7 +21,7 @@ Drupal.behaviors.webform_addmore = {
         //console.debug('parent_fieldset_selector: %o', parent_fieldset_selector);
         var add_more_button_id = 'webform-addmore-' + collections[index];
         var del_more_button_id = 'webform-addmore-del-' + collections[index];
-        var addBtn = $('<input type="button" id="' + add_more_button_id + '" class="add-more" />').val(addBtnTxt);
+        var addBtn = $('<input type="button" id="' + add_more_button_id + '" class="add-more button white" />').val(addBtnTxt);
         addBtn.click(function() {
           var parent_fieldset = $(this).parents('fieldset');
           if (parent_fieldset.length > 0) {
@@ -36,40 +32,31 @@ Drupal.behaviors.webform_addmore = {
             var hiddenFieldsets = fieldsets.not(':visible');
           }
 
-
-          hiddenFieldsets.filter(':first').fadeIn();
+          var next = hiddenFieldsets.filter(':first');
+          next.fadeIn();
+          var delBtn = $('<input type="button" class="del-btn button white" />').val('Remove');
+          $(next).append(delBtn);
 
           if(hiddenFieldsets.size() < 2) {
             $(this).hide();
           }
 
-          var shownFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':hidden');
-          if(shownFieldsets.size() < 2) {
-            $('#' + parent_id).find('.del-btn').hide();
-          }
-          else {
-            $('#' + parent_id).find('.del-btn').show();
-          }
-
         });
 
-        var delBtn = $('<input type="button" id="' + del_more_button_id + '" class="del-btn" />').val(delBtnTxt);
-        delBtn.click(function() {
-          var parent_fieldset = $(this).parents('fieldset');
-          if (parent_fieldset.length > 0) {
-            var parent_id = parent_fieldset.attr('id');
-            var shownFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':hidden');
-          }
-          else {
-            var shownFieldsets = fieldsets.not(':hidden');
-          }
 
-          shownFieldsets.filter(':last').hide().find(':input').val('');
+      $('.del-btn').livequery(function(){
+        $('.del-btn').click(function() {
+          var parent_fieldset = $(this).parent();
+          parent_fieldset.find(':input').val('');
+          parent_fieldset.find('.del-btn').remove();
+          parent_fieldset.hide();
+
 
           // We need to rescan the page for shown fieldsets
           if (parent_fieldset.length > 0) {
             var parent_id = parent_fieldset.attr('id');
             var shownFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':hidden');
+
           }
           else {
             var shownFieldsets = fieldsets.not(':hidden');
@@ -81,21 +68,18 @@ Drupal.behaviors.webform_addmore = {
 
           var hiddenFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':visible');
 
-          if(hiddenFieldsets.size() < 1) {
-            $('#' + parent_id).find('.add-more').hide();
-          }
-          else {
-            $('#' + parent_id).find('.add-more').show();
-          }
+          var cont = parent_fieldset.parent().parent();
+
+          $(cont).append(addBtn);
+          addBtn.show();
         });
+      });
 
         var fieldsets = container.find(parent_fieldset_selector)
           .not(container.find(parent_fieldset_selector + ' ' + parent_fieldset_selector))
           .hide();
 
-        fieldsets.filter(':last').after($('<div/>').append(delBtn));
         fieldsets.filter(':last').after($('<div/>').append(addBtn));
-
         var count = 0;
         $.each(fieldsets, function(i, fieldset){
           var val = $(fieldset).find(':input').val();
@@ -130,6 +114,8 @@ Drupal.behaviors.webform_addmore = {
         $('#' + fieldset).addClass('webform-addmore');
       }
     );
+
+
 
     fieldsetRepeater($('.webform-client-form'), '.webform-addmore', Drupal.settings.webform_addmore.addlabel, Drupal.settings.webform_addmore.dellabel, 1);
   }
