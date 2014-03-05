@@ -14,17 +14,18 @@
                 <div class="column">
                     <div id="meewerken-scrollto" class="contact-information">
 
-                        <h2>Meewerken?</h2>
-                        <?php print l('Individueel', 'meewerken/inschrijven', array('attributes' => array('class' => array('button')))); ?>
-                        <?php print l('Groep', 'meewerken/groepen', array('attributes' => array('class' => array('button')))); ?>
+                        <?php
+                        /* <h2>Meewerken?</h2> */
+                        /* <?php print l('Individueel', 'meewerken/inschrijven', array('attributes' => array('class' => array('button')))); ?> */
+                        /* <?php print l('Groep', 'meewerken/groepen', array('attributes' => array('class' => array('button')))); ?> */
 
-                        <p></p>
+                        /* <p></p> */
 
-                        <!--
-                        <h3>Standhouder Student Village?</h3>
-                        <?php print l('Schrijf je nu in', 'meewerken/studentvillage', array('attributes' => array('class' => array('button button-red')))); ?>
-                        <p></p>
-                        -->
+                        /* <h3>Standhouder Student Village?</h3> */
+                        /* <?php print l('Schrijf je nu in', 'meewerken/studentvillage', array('attributes' => array('class' => array('button button-red')))); ?> */
+                        /* <p></p> */
+                        ?>
+
                         <h3>Pers?</h3>
                         <?php print l('Schrijf je nu in', 'pers', array('attributes' => array('class' => array('button button-yellow')))); ?>
 

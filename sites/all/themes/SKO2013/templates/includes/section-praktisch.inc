@@ -16,7 +16,7 @@
                 <img class="feature-list-item-image" src="<?php print $base_path . path_to_theme(); ?>/assets/images/feature-wanneer.png" />
                 <h2>Wanneer?</h2>
                 <p>
-                    Woensdag 25 september
+                    Woensdag 24 september
                 </p>
             </li>
             <li class="feature-list-divider"></li>
