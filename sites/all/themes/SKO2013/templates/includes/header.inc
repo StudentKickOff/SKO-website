@@ -1,7 +1,7 @@
 <header class="site-header" id="site-header">
     <div class="container nav-container">
         <h1 class="site-header-logo">
-            <?php print l('<img src="' . $base_path . path_to_theme() . '/assets/images/logo-shadow.png" alt="Student Kick Off" />', '<front>', array('html' => TRUE)); ?>
+            <?php print l('<img src="' . $base_path . path_to_theme() . '/assets/images/logo-shadow.png" alt="Student Kick-Off" />', '<front>', array('html' => TRUE)); ?>
         </h1>
         <nav>
             <ul class="horizontal-navigation site-navigation">
