@@ -6,7 +6,7 @@
         </aside>
         <div class="detail-content">
             <header>
-                <h1 class="no-margin no-padding">Student Kick-off <?php print $title; ?></h1>
+                <h1 class="no-margin no-padding">Student Kick-Off <?php print $title; ?></h1>
             </header>
             <?php print render($content['body']); ?>
             <h2>Line-up</h2>

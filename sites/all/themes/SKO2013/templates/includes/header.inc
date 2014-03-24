@@ -1,5 +1,5 @@
 <header class="site-header" id="site-header">
-    <div class="container">
+    <div class="container nav-container">
         <h1 class="site-header-logo">
             <?php print l('<img src="' . $base_path . path_to_theme() . '/assets/images/logo-shadow.png" alt="Student Kick Off" />', '<front>', array('html' => TRUE)); ?>
         </h1>
@@ -17,6 +17,8 @@
                     <?php print l('Info', 'info', array('attributes' => array('class' => array('site-navigation-praktisch')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Historiek") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('site-navigation-historiek')))); ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Student Rock Rally") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Student Rock Rally', 'studentrockrally', array('attributes' => array('class' => array('site-navigation-student-rock-rally')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&equiv;</a></li>
             </ul>
         </nav>

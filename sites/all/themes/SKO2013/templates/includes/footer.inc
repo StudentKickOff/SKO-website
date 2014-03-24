@@ -31,7 +31,7 @@
 
                         <p></p>
 
-                        <h3>Student Kick&#45;off vzw</h3>
+                        <h3>Student Kick&#45;Off vzw</h3>
                         <p>
                             <b>Maatschappelijke zetel</b><br />
                             Botermarkt 1<br />
@@ -48,6 +48,9 @@
             </div>
         </div>
         <p class="copyright">
-            &copy;2005&#45;2013 Student Kick&#45;off vzw
+            &copy;2005&#45;2014 Student Kick&#45;Off vzw<br /><br />
+            Student Kick-Off vzw hecht belang aan uw privacy en verbindt zich ertoe om naar best vermogen de bescherming van de persoonsgegevens te waarborgen via technische veiligheidsvoorschriften en een adequaat veiligheidsbeleid naar haar medewerkers toe. Hoewel de meeste informatie op deze site beschikbaar is zonder dat er persoonlijke gegevens moeten worden verstrekt, is het mogelijk dat de gebruiker om persoonlijke informatie gevraagd wordt. Deze informatie zal enkel gebruikt worden in het kader van de recrutering van vrijwilligers voor het festival georganiseerd door Student Kick-Off vzw.<br />
+            De gebruiker beschikt over een wettelijk recht op inzage en eventuele correctie van zijn persoonsgegevens. Indien nodig kunt u ook vragen de gegevens te corrigeren die onjuist, niet volledig of niet pertinent zouden zijn.
+        </p>
     </div>
 </footer>

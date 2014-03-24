@@ -16,6 +16,8 @@
         <?php endif; ?>
 
         <?php if ($title === "Line-up") : ?>
+            <h4>Hou <?php print l('onze Facebookpagina', 'https://www.facebook.com/StudentKickOff'); ?> in de gaten en kom als eerste te weten welke artiesten onze podia zullen beklimmen!</h4>
+            <br />
             <div class="two-columns">
                 <div class="column white-background column-no-padding">
                     <h1>Main Stage</h1>

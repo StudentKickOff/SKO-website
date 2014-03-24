@@ -18,6 +18,7 @@
         </div>
         <aside class="sidebar-closer">
             <h2>Onze partners</h2>
+            <h4>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h4>
             <div id="partner-slider">
                 <?php print render($page['partners']); ?>
             </div>

@@ -24,6 +24,7 @@ regions[content] = Content
 regions[columnleft] = Left Column
 regions[columnright] = Right Column
 regions[footer] = Footer
+regions[srrform] = SRRForm
 
 ; Information added by drupal.org packaging script on 2013-04-03
 version = "7.0-dev"
