@@ -9,7 +9,7 @@ ini_set('display_errors', 'On');
   </head>
   <body>
     <div class="container">
-      <div class="info" style="float: left; display: table-cell; margin-top: 26px; border-top: 2px dotted red; border-bottom: 2px dotted red; padding-top: 8px; padding-bottom: 8px;">
+      <div class="info" style="float: left; display: table-cell; margin-top: 29px;border-top: 2px dotted red; border-bottom: 2px dotted red; padding-top: 8px; padding-bottom: 8px;">
         <table>
           <tbody>
              <tr>
@@ -26,7 +26,7 @@ ini_set('display_errors', 'On');
          </table>
       </div>
       <div class="logo">
-        <img style="padding-left: 10px;" src="http://www.studentkickoff.be/signature/logo2013.png" />
+        <img src="http://www.studentkickoff.be/signature/logo2013.png" />
       </div>
     </div>
   </body>
