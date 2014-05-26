@@ -7,6 +7,7 @@ nbproject/
 _old/
 _old2/
 _old2012/
+_old2013/
 
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
