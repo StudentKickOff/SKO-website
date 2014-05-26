@@ -16,17 +16,19 @@ Drupal.behaviors.webform_addmore = {
           var parent_fieldset_selector = fieldsetSelecter;
         }
         else {
-          var parent_fieldset_selector = '#' + collections[index] + ' ' + fieldsetSelecter;
+          var _parent_fieldset_selector = collections[index];
+          var parent_fieldset_selector = _parent_fieldset_selector;
         }
-        //console.debug('parent_fieldset_selector: %o', parent_fieldset_selector);
-        var add_more_button_id = 'webform-addmore-' + collections[index];
-        var del_more_button_id = 'webform-addmore-del-' + collections[index];
+        var add_more_button_id = 'webform-addmore-' + collections[index].replace(/\./g, '-');
+        var del_more_button_id = 'webform-addmore-del-' + collections[index].replace(/\./g, '-');
+
         var addBtn = $('<input type="button" id="' + add_more_button_id + '" class="add-more button white" />').val(addBtnTxt);
         addBtn.click(function() {
-          var parent_fieldset = $(this).parents('fieldset');
+          var parent_fieldset = $(this).parent();
           if (parent_fieldset.length > 0) {
-            var parent_id = parent_fieldset.attr('id');
-            var hiddenFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':visible');
+            var _parent_id = parent_fieldset.attr('class');
+            var parent_id = '.' + _parent_id.replace(/ /g, '.');
+            var hiddenFieldsets = $(parent_id).find(fieldsetSelecter).not(':visible');
           }
           else {
             var hiddenFieldsets = fieldsets.not(':visible');
@@ -35,7 +37,7 @@ Drupal.behaviors.webform_addmore = {
           var next = hiddenFieldsets.filter(':first');
           next.fadeIn();
           var delBtn = $('<input type="button" class="del-btn button white" />').val('Remove');
-          $(next).append(delBtn);
+          $(next).append('<div class="clearfix"></div>', delBtn);
 
           if(hiddenFieldsets.size() < 2) {
             $(this).hide();
@@ -54,8 +56,10 @@ Drupal.behaviors.webform_addmore = {
 
           // We need to rescan the page for shown fieldsets
           if (parent_fieldset.length > 0) {
-            var parent_id = parent_fieldset.attr('id');
-            var shownFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':hidden');
+            var _parent_id = parent_fieldset.attr('class');
+            var parent_id = '.' + _parent_id.replace(/ /g, '.');
+
+            var shownFieldsets = $(parent_id).find(fieldsetSelecter).not(':hidden');
 
           }
           else {
@@ -66,7 +70,7 @@ Drupal.behaviors.webform_addmore = {
             $(this).hide();
           }
 
-          var hiddenFieldsets = $('#' + parent_id + ' ' + fieldsetSelecter).not(':visible');
+          var hiddenFieldsets = $(parent_id).find(fieldsetSelecter).not(':visible');
 
           var cont = parent_fieldset.parent().parent();
 
@@ -75,11 +79,11 @@ Drupal.behaviors.webform_addmore = {
         });
       });
 
-        var fieldsets = container.find(parent_fieldset_selector)
-          .not(container.find(parent_fieldset_selector + ' ' + parent_fieldset_selector))
-          .hide();
+      var parent = $(parent_fieldset_selector);
+      var fieldsets = $(parent).find(fieldsetSelecter).hide();
 
-        fieldsets.filter(':last').after($('<div/>').append(addBtn));
+      $(parent).append(addBtn);
+
         var count = 0;
         $.each(fieldsets, function(i, fieldset){
           var val = $(fieldset).find(':input').val();
@@ -103,21 +107,24 @@ Drupal.behaviors.webform_addmore = {
     Drupal.settings.webform_addmore.collections = new Array();
     $.each(
       Drupal.settings.webform_addmore.fieldsets,
-      function(i, fieldset) {
-        var parent_fieldset = $('#' + fieldset).parents('fieldset');
+      function(i, _fieldset) {
+        var fieldset = '.' + _fieldset.replace(/ /g, '.');
+        var parent_fieldset = $(fieldset).parents('fieldset');
         if (parent_fieldset.length > 0) {
-          var parent_id = parent_fieldset.attr('id');
+          var _parent_id = parent_fieldset.attr('class');
+          var parent_id = '.' + _parent_id.replace(/ /g, '.');
           if ($.inArray(parent_id, Drupal.settings.webform_addmore.collections) < 0) {
             Drupal.settings.webform_addmore.collections.push(parent_id);
           }
         }
-        $('#' + fieldset).addClass('webform-addmore');
+        $(fieldset).addClass('webform-addmore');
       }
     );
 
 
 
-    fieldsetRepeater($('.webform-client-form'), '.webform-addmore', Drupal.settings.webform_addmore.addlabel, Drupal.settings.webform_addmore.dellabel, 1);
+    fieldsetRepeater($('.webform-client-form'), '.webform-addmore',
+Drupal.settings.webform_addmore.addlabel, Drupal.settings.webform_addmore.dellabel, 1);
   }
 };
 
