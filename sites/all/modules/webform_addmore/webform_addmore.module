@@ -53,7 +53,8 @@ function webform_addmore_webform_component_presave(&$component) {
   }
   if(isset($component['extra']['addmore'])){
     $settings = variable_get('webform_addmore_' . $component['nid'], array());
-    $settings[$component['cid']] = isset($component['extra']['addmore']) ? $component['extra']['addmore'] : '';
+    $settings[$component['cid']] = isset($component['extra']['addmore']) ?
+$component['extra']['addmore'] : '';
     variable_set('webform_addmore_' . $component['nid'], $settings);
   }
 }
@@ -126,10 +127,12 @@ function webform_addmore_form_alter(&$form, &$form_state, $form_id) {
       $parents = webform_component_parent_keys($form['#node'], $form['#node']->webform['components'][$cid]);
       $component_id = str_replace('_', '-', array_pop($parents));
       if (!empty($parents)) {
-        $form_key[] = 'webform-component-' . str_replace('_', '-', implode('--', $parents)) . '--' . $component_id;
+//        $form_key[] = 'webform-component-' . str_replace('_', '-', implode('--', $parents)) . '--' . $component_id;
+        $form_key[] = 'webform-component--' . str_replace('_', '-', implode('--', $parents)) . '--' . $component_id;
       }
       else {
-        $form_key[] = 'webform-component-' . $component_id;
+//        $form_key[] = 'webform-component-' . $component_id;
+        $form_key[] = 'webform-component--' . $component_id;
       }
     }
   }
