@@ -2,8 +2,6 @@
 
 <?php include('includes/subheader-large.inc'); ?>
 
-<?php include('includes/section-praktisch.inc'); ?>
-
 <section class="pattern-background">
     <div class="container has-sidebar">
         <div class="main">
