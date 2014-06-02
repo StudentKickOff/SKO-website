@@ -12,7 +12,7 @@
             <img class="feature-list-item-image" src="<?php print $base_path . path_to_theme(); ?>/assets/images/feature-waar.png" />
             <h1 class="button-yellow">
                 Sint&ndash;Pietersplein<br />
-                9000 Gent
+                Gent
             </h1>
         </li>
         <li class="feature-list-item">
