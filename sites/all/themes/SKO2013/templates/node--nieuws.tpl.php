@@ -48,7 +48,8 @@
                     <br />
                     <h2 class="heading-primary">Bijlages</h2>
                     <?php
-                      $attach = field_get_items('node', $node, 'field_attachment')[0];
+                      $attach_r = field_get_items('node', $node, 'field_attachment');
+                      $attach = $attach_r[0];
                     ?>
 
                     <a href="<?php print file_create_url($attach['uri']); ?>">
