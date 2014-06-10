@@ -47,7 +47,15 @@
                     <div style="clear: both;" />
                     <br />
                     <h2 class="heading-primary">Bijlages</h2>
-                    <?php print render($content['field_attachment']); ?>
+                    <?php
+                      $attach = field_get_items('node', $node, 'field_attachment')[0];
+                    ?>
+
+                    <a href="<?php print file_create_url($attach['uri']); ?>">
+                      <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/file-unknown.png" />
+                      <?php print theme_file_icon(array()); ?>
+                      <?php print $attach['filename']; ?>
+                    </a>
                   <?php endif; ?>
                 </aside>
             <?php endif; ?>
