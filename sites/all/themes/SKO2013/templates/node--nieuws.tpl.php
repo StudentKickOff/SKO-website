@@ -37,10 +37,18 @@
             <?php print render($content['field_grote_foto']); ?>
         </div>
         <div class="detail-container">
-            <?php if (!empty($content['field_fotos'])) : ?>
+            <?php if (!empty($content['field_fotos']) or !empty($content['field_attachment'])) : ?>
                 <aside class="detail-side">
+                  <?php if (!empty($content['field_fotos'])) : ?>
                     <h2 class="heading-primary">Foto&rsquo;s</h2>
                     <?php print render($content['field_fotos']); ?>
+                  <?php endif; ?>
+                  <?php if (!empty($content['field_attachment'])) : ?>
+                    <div style="clear: both;" />
+                    <br />
+                    <h2 class="heading-primary">Bijlages</h2>
+                    <?php print render($content['field_attachment']); ?>
+                  <?php endif; ?>
                 </aside>
             <?php endif; ?>
             <div class="detail-content">
