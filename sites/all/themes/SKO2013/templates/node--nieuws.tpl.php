@@ -52,7 +52,7 @@
                     ?>
 
                     <a href="<?php print file_create_url($attach['uri']); ?>">
-                      <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/file-unknown.png" />
+                      <!--<img src="<?php print $base_path . path_to_theme(); ?>/assets/images/file-unknown.png" /> -->
                       <?php print theme_file_icon(array()); ?>
                       <?php print $attach['filename']; ?>
                     </a>
