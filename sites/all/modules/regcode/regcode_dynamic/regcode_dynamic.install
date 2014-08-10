@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function regcode_dynamic_install() {
+
+  // We want this module to run before the regcode module
+  db_update('system')
+    ->fields(array('weight' => -1))
+    ->condition('name', 'regcode_dynamic')
+    ->condition('type', 'module')
+    ->execute();
+}
