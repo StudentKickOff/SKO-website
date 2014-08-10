@@ -166,7 +166,7 @@ function complete_profile_entity_has_empty_required_fields($entity_type, $entity
       // Check if the required field is empty.
       if (complete_profile_field_is_empty($entity_type, $entity, $instance['field_name'])) {
         // Check that the user can actually edit their missing field.
-        if (field_access('edit', field_info_field($instance['field_name']), $entity_type, $entity, $account)) {
+        if (field_access('edit', field_info_field($instance['field_name']), $entity_type, $entity, $entity)) {
           return TRUE;
         }
       }
