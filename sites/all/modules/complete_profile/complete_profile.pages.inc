@@ -44,6 +44,20 @@ function complete_profile_form($form, &$form_state, $account) {
     }
   }
 
+
+  // Support the regcode module
+  if (module_exists('regcode')) {
+    $code_optional = variable_get('regcode_optional', FALSE);
+
+    $form['regcode']['regcode_code'] = array(
+      '#type' => 'textfield',
+      '#title' => variable_get('regcode_field_title', t('Registration Code')),
+      '#description' => variable_get('regcode_field_description', t('Please enter your registration code.')),
+      '#required' => !($code_optional || user_access('administer users')),
+      '#element_validate' => array('regcode_code_element_validate'),
+    );
+  }
+
   $form['help'] = array(
     '#markup' => '<p>' . t('Fill out the following fields to complete your profile.') . '</p>',
     '#weight' => -100,
@@ -57,7 +71,22 @@ function complete_profile_form($form, &$form_state, $account) {
 
   form_load_include($form_state, 'inc', 'user', 'user.pages');
   $form['#validate'][] = 'user_profile_form_validate';
-  $form['#submit'][] = 'user_profile_form_submit';
+  $form['#submit'][] = 'complete_profile_form_submit';
 
   return $form;
 }
+
+function complete_profile_form_submit($form, &$form_state) {
+  // Regcode support
+  if(module_exists('regcode')) {
+    // Set regcode to used
+
+    // Little hack to be able to use the regcode_use_helper here
+    $regcode_array = array('regcode_code' => $form['regcode']['regcode_code']['#value']);
+    regcode_use_helper($regcode_array, $form['#entity']);
+  }
+
+  // Submit the profile form
+  return user_profile_form_submit($form, $form_state);
+}
+
