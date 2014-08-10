@@ -1,0 +1,16 @@
+; $Id: regcode_voucher.info,v 1.1.4.2 2010/03/06 05:21:58 aidan Exp $
+name = Voucher system
+description = Allows registration codes to be used after registration.
+core = 7.x
+package = Registration
+
+dependencies[] = regcode
+
+files[] = regcode_voucher.module
+
+; Information added by Drupal.org packaging script on 2014-01-06
+version = "7.x-1.1"
+core = "7.x"
+project = "regcode"
+datestamp = "1389017005"
+
