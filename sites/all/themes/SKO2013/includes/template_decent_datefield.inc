@@ -10,6 +10,8 @@ function SKO2013_date_combo($variables) {
   $replacements[2] = '';
   $replacements[1] = '';
 
-  $variables['element']['#children'] = preg_replace($patterns, $replacements, $variables['element']['#children'], preg_match_all($patterns[0], $variables['element']['#children']) - 1);
+  $dummy = array();
+
+  $variables['element']['#children'] = preg_replace($patterns, $replacements, $variables['element']['#children'], preg_match_all($patterns[0], $variables['element']['#children']) - 1, $dummy);
   return theme('form_element', $variables);
 }
