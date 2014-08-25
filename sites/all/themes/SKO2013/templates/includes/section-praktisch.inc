@@ -24,6 +24,6 @@
     </ul>
     <?php print l('Meer praktische info', 'info', array('attributes' => array('class' => array('button button-praktisch ')))); ?>
     <?php print l('Meewerken?', 'meewerken', array('attributes' => array('class' => array('button button-praktisch button-yellow'), 'id' => 'praktisch-meewerken-button'))); ?>
-    <?php print l('Student Village', 'meewerken/studentvillage', array('attributes' => array('class' => array('button button-praktisch button-red')))); ?>
+    <?php // print l('Student Village', 'meewerken/studentvillage', array('attributes' => array('class' => array('button button-praktisch button-red')))); ?>
 </div>
 
