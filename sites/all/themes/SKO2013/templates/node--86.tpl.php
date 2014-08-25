@@ -1,8 +1,8 @@
-<article class="white-background detail-full-item history-item">
+<article class="white-background detail-full-item history-item" id="partners">
     <a href="#" class="history-item-toggle"><?php print $title; ?></a>
 
     <div class="detail-container">
-        <h3>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h3>
+        <!--<h3>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h3>-->
         <br />
 
         <?php if(count(views_get_view_result('partnerslider','praktisch_partners_presenting', $node->nid))) : ?>
