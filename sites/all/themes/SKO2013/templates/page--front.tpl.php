@@ -15,7 +15,7 @@
             </div>
         </div>
         <aside class="sidebar-closer">
-            <h2><a href="info#partners">Onze partners</a></h2>
+            <h2><a href="content/partners">Onze partners</a></h2>
             <!--<h4>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h4>-->
             <div id="partner-slider">
                 <?php print render($page['partners']); ?>
