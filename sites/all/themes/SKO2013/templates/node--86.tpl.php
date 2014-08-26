@@ -17,8 +17,8 @@
         </div>
     </article>
 <?php else : ?>
-    <article class="white-background detail-full-item history-item" id="partners">
-        <a href="#" class="history-item-toggle"><?php print $title; ?></a>
+    <h1><?php print $title; ?></h1>
+    <article class="white-background" id="partners">
 
         <div class="detail-container">
             <!--<h3>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h3>-->
