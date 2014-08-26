@@ -23,4 +23,15 @@
             </ul>
         </nav>
     </div>
+    <div id="login-container">
+      <?php
+        if(user_is_logged_in()) {
+          print "Welkom, " . $user->name . "! ";
+          print l('Log uit', 'user/logout', array('attributes' => array('class' => array('button button-yellow'))));
+        } else {
+          print "Welkom! ";
+          print l('Log in', 'user', array('attributes' => array('class' => array('button'))));
+        }
+      ?>
+    </div>
 </header>
