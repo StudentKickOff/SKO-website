@@ -22,6 +22,9 @@
         <div>
             <?php print render($content['field_infotekst']); ?>
         </div>
+        <?php
+            if (!empty($content['field_filialen'])) :
+        ?>
         <footer>
             <span class="author">
                 <?php
@@ -31,5 +34,8 @@
                 ?>
             </span>
         </footer>
+        <?php
+            endif;
+        ?>
     </div>
 </article>
