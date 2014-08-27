@@ -7,7 +7,7 @@ function SKO2013_form_alter(&$form, &$form_state, $form_id) {
     } elseif ($form_id == "user_login") {
         $form['inleiding'] = array(
             '#type' => 'item',
-            '#markup' => '<strong>Heb je nog geen Student Kick-Off account? <a href="user/register">Maak dan een account aan</a>, of log in via Facebook of Google.</strong><br /><br />',
+            '#markup' => '<strong>Heb je nog geen Student Kick-Off account? ' . l('Maak dan een account aan', 'user/register') . ', of log in via Facebook of Google.</strong><br /><br />',
             '#weight' => -10,
         );
     } elseif ($form_id == "user_register_form") {
