@@ -34,7 +34,8 @@
           print l('Log uit', 'user/logout', array('attributes' => array('class' => array('button button-yellow'))));
         } else {
           print "Welkom! ";
-          print l('Log in', 'user', array('attributes' => array('class' => array('button'))));
+          print l('Log in', 'user', array('attributes' => array('class' => array('button')))) . " ";
+          print l('Registreer', 'user/register', array('attributes' => array('class' => array('button button-yellow'))));
         }
       ?>
     </div>
