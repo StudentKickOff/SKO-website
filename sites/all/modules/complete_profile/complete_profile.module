@@ -132,7 +132,8 @@ function complete_profile_field_is_empty($entity_type, $entity, $field_name) {
     // @todo Do we need to run filtering on values?
     //$field = field_info_field($field_name);
     //$items = _field_filter_items($field, $items);
-    return empty($items);
+    $item = array_shift($items);
+    return empty($item['value']);
   }
 
   return TRUE;
