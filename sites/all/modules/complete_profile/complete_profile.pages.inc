@@ -52,7 +52,7 @@ function complete_profile_form($form, &$form_state, $account) {
     $form['regcode']['regcode_code'] = array(
       '#type' => 'textfield',
       '#title' => variable_get('regcode_field_title', t('Registration Code')),
-      '#description' => variable_get('regcode_field_description', t('Gelieve je Student Kick-Off Card barcode hier in te geven.')),
+      '#description' => variable_get('regcode_field_description', t('Please enter your registration code.')),
       '#required' => !($code_optional || user_access('administer users')),
       '#element_validate' => array('regcode_code_element_validate'),
     );
