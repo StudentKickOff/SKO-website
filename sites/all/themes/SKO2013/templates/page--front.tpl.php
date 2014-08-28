@@ -5,7 +5,7 @@
 <section class="pattern-background">
     <div class="container has-sidebar">
         <div class="main">
-            <h1>What&rsquo;s hot!?</h1>
+            <h1 class="white">What&rsquo;s hot!?</h1>
             <div class="slider-container">
                 <div id="slider">
                     <?php print render($page['hot']); ?>
@@ -15,8 +15,8 @@
             </div>
         </div>
         <aside class="sidebar-closer">
-            <h2>Onze partners</h2>
-            <h4>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h4>
+            <h2><a href="content/partners">Onze partners</a></h2>
+            <!--<h4>Uw logo hier? Contacteer ons via <a href="mailto:middelenwerving@studentkickoff.be">middelenwerving@studentkickoff.be</a>!</h4>-->
             <div id="partner-slider">
                 <?php print render($page['partners']); ?>
             </div>

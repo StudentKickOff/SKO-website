@@ -20,11 +20,11 @@
             <br />
             <div class="two-columns">
                 <div class="column white-background column-no-padding">
-                    <h1>Main Stage</h1>
+                    <h1>Main Stage<br /><br /></h1>
                     <?php print render($page['columnleft']); ?>
                 </div>
                 <div class="column column-no-padding white-background">
-                    <h1>2nd stage by Decadance & Charlatan</h1>
+                    <h1>Red Bull Elektropedia presents Culture Club</h1>
                     <?php print render($page['columnright']); ?>
                 </div>
             </div>

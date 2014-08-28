@@ -28,7 +28,7 @@ function webform_validation_allornone_webform_validation_validate($validator_nam
                 foreach ($keys as $value) {
                     $names[] = $components[$value]['name'];
                 }
-                return array($keys[0] => t('Controleer als alle velden bij elk groepslid zijn ingevuld!'));
+                return array($keys[0] => t('Controleer of alle velden bij elk groepslid zijn ingevuld!'));
             }
             break;
         }
