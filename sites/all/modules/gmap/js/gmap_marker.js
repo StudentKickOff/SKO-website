@@ -14,11 +14,14 @@ Drupal.gmap.factory.marker = function (opts) {
     var geocoder = new google.maps.Geocoder();
 
     geocoder.geocode({'location': marker.getPosition()}, function(results, status) {
-      console.log(status);
       if (status == google.maps.GeocoderStatus.OK) {
         var address = results[0]['formatted_address'];
         google.maps.event.addListener(marker, 'click', function() {
           open("https://www.google.be/maps/place/" + address + "/", '_blank');
+        });
+      } else {
+        google.maps.event.addListener(marker, 'click', function() {
+          open("https://www.google.be/maps?q=" + marker.getPosition().toUrlValue(), '_blank');
         });
       }
     });
