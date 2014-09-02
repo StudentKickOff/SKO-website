@@ -15,7 +15,7 @@ Drupal.gmap.factory.marker = function (opts) {
 
     geocoder.geocode({'location': marker.getPosition()}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-        address = results[0]['formatted_address'];
+        var address = results[0]['formatted_address'];
         google.maps.event.addListener(marker, 'click', function() {
           open("https://www.google.be/maps/place/" + address + "/", '_blank');
         });
