@@ -19,10 +19,8 @@
                     <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('site-navigation-historiek')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Student Rock Rally") ? "site-navigation-current" : ""; ?>">
                     <?php print l('SRR', 'studentrockrally', array('attributes' => array('class' => array('site-navigation-student-rock-rally')))); ?>
-                <?php
-                /* </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Korting") ? "site-navigation-current" : ""; ?>"> */
-                /*     <?php print l('SKO Card', 'skocard', array('attributes' => array('class' => array('site-navigation-korting')))); ?> */
-                ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Korting") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('SKO Card', 'skocard', array('attributes' => array('class' => array('site-navigation-korting')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&equiv;</a></li>
             </ul>
         </nav>
