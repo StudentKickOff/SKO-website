@@ -21,10 +21,7 @@
                     <a href="<?php print $node_url . '#scrollTo'; ?>"><?php print $title; ?></a>
                 </h3>
             </header>
-                <?php print render($content['body']); ?>
-            <footer>
-                <span class="author">By <?php print $name; ?></span>
-            </footer>
+            <?php print render($content['body']); ?>
         </div>
     </article>
 
