@@ -29,7 +29,7 @@
             <span class="author">
                 <?php
                     if (!empty($content['field_filialen'])) {
-                        print "Enkel in: " . render($content['field_filialen']);
+                        print "Geldig in: " . render($content['field_filialen']);
                     }
                 ?>
             </span>
