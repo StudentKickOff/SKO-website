@@ -29,7 +29,7 @@
             <span class="author">
                 <?php
                     if (!empty($content['field_filialen'])) {
-                        print "Enkel op";
+                        print "Op volgende adressen";
                     }
                 ?>
             </span>
