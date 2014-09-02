@@ -23,8 +23,10 @@ function complete_profile_menu() {
 function complete_profile_page_build() {
   // First check if we can redirect in the first place before inspecting the
   // user fields. Then check for empty fields, and then get the redirect.
-  if (complete_profile_can_redirect() && complete_profile_account_check() && $redirect = complete_profile_get_redirect()) {
-    drupal_goto($redirect['path'], $redirect['options']);
+  if(arg(0) == "korting" || arg(0) == "skocard" || arg(0) == "sko-card") {
+    if (complete_profile_can_redirect() && complete_profile_account_check() && $redirect = complete_profile_get_redirect()) {
+      drupal_goto($redirect['path'], $redirect['options']);
+    }
   }
 }
 
