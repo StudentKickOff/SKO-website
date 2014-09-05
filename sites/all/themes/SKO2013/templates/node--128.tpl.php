@@ -36,4 +36,5 @@
             </p>
         </li>
     </ul>
+    <img src="<?php print base_path() . drupal_get_path('theme', 'SKO2013'); ?>/assets/images/meewerken.jpg" />
 </div>
