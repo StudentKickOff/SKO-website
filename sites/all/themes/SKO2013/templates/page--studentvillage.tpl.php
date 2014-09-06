@@ -27,7 +27,7 @@
                 ?>
             </div>
             <div class="student-village-container column white-background column-no-padding">
-                <h1>Student Village bewoners editie 2013</h1>
+                <h1>Village People 2014</h1>
                 <?php print render($page['content']); ?>
             </div>
         </div>

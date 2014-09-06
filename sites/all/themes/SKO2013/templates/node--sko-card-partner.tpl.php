@@ -19,8 +19,8 @@
                 <?php print $title; ?>
             </header>
         </a>
-        <div>
-            <?php print render($content['field_infotekst']); ?>
+        <div class="content">
+          <?php print render($content['field_infotekst']); ?>
         </div>
         <?php
             if (!empty($content['field_filialen'])) :
@@ -29,12 +29,13 @@
             <span class="author">
                 <?php
                     if (!empty($content['field_filialen'])) {
-                        print "Enkel in: " . render($content['field_filialen']);
+                        print "Op volgende adressen";
                     }
                 ?>
             </span>
         </footer>
         <?php
+            print render($content['field_filialen']);
             endif;
         ?>
     </div>

@@ -128,7 +128,7 @@ function regcode_ie_admin_import_validate($form, &$form_state) {
   );
 
   // Save the file
-  if ($file = file_save_upload('regcode_import_file', $validators, file_directory_path())) {
+  if ($file = file_save_upload('regcode_import_file', $validators, file_default_scheme() . '://')) {
     $form_state['values']['fileobj'] = $file;
     drupal_set_message(t('File successfully saved'));
   }

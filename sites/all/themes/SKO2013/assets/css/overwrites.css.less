@@ -222,3 +222,35 @@ html[xmlns] .slides {display: block;}
  * include js that eliminates this class on page load */
 .no-js .slides > li:first-child {display: block;}
 
+.toboggan-unified {
+  .login-message {
+    font-family: 'League Gothic';
+    font-weight: normal;
+    padding-bottom: .5em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  #login-links a {
+    border: none;
+    background-color: #2d96e7;
+
+    font-family: 'League Gothic';
+    font-weight: normal;
+    padding-bottom: .5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+        background-color: lighten(#2d96e7, 4%);
+    }
+  }
+
+  #login-links a.lt-active,
+  #login-links a.lt-active:hover {
+    background-color: #2d96e7;
+    border: none;
+    &:hover {
+        background-color: lighten(#2d96e7, 4%);
+    }
+  }
+}
