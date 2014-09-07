@@ -5,9 +5,11 @@ function _webform_importmedewerkers_process_group($node, $submission) {
     $members = $submission->data;
     _webform_importmedewerkers_filter_fields($members);
 
+    dpm($members);
+
     foreach($members as $member) {
-        $query = _webform_importmedewerkers_build_query($member);
-        _webform_importmedewerkers_send_api_request($query, $submission, $member);
+        /* $query = _webform_importmedewerkers_build_query($member); */
+        /* _webform_importmedewerkers_send_api_request($query, $submission, $member); */
     }
 }
 
