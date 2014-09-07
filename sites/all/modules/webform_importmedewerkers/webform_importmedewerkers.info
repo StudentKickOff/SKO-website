@@ -1,6 +1,6 @@
 name = Webform Import Medewerkers
 description = Provides automagic import through the API
 core = 7.x
-version = "7.x-0.1-dev"
+version = "7.x-2014.0-dev"
 package = Webform
 dependencies[] = webform

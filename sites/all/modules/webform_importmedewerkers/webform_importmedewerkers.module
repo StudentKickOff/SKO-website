@@ -10,13 +10,13 @@ function webform_importmedewerkers_webform_submission_update($node, $submission)
 }
 
 function _webform_importmedewerkers_process($node, $submission) {
-            module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_utils');
+    module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_utils');
 
     try {
-        if($node->vid == 53 || $node->vid == 129) {
+        if($node->vid == 53) { # Solo volunteer
             module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions_solo');
             _webform_importmedewerkers_process_solo($node, $submission);
-        } else if($node->vid == 55) {
+        } else if($node->vid == 55) { # Groups
             module_load_include('inc', 'webform_importmedewerkers', 'includes/webform_importmedewerkers_functions_group');
             _webform_importmedewerkers_process_group($node, $submission);
         }

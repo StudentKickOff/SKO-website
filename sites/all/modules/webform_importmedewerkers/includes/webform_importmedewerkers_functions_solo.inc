@@ -13,12 +13,16 @@ function _webform_importmedewerkers_process_solo($node, $submission) {
     $query = _webform_importmedewerkers_build_query($fields);
 
     // We pass the submission and fields here too for logging
-    _webform_importmedewerkers_send_api_request($query, $submission, $fields);
+    /* _webform_importmedewerkers_send_api_request($query, $submission, $fields); */
 }
 
 function _webform_importmedewerkers_normalize_fields(&$fields) {
     // Rijbewijs ja/nee -> 0/1
     $fields['rijbewijs'] = ($fields['rijbewijs'][0] == "ja") ? "1" : "0";
+
+    // Add tapervaring to opmerkingen
+    $fields['opmerkingen'][0] .= "\n\n" . $fields['barervaring'][0];
+    unset($fields['barervaring']);
 
     // Add empty fields
     $fields['vereniging'] = "";
@@ -31,6 +35,8 @@ function _webform_importmedewerkers_normalize_fields(&$fields) {
 function _webform_importmedewerkers_filter_fields(&$fields) {
 
     // Remove unused fields
+    unset($fields['rijksregisternummer']);
+    unset($fields['id_kaart_nummer']);
     unset($fields['herhaal_e_mail']);
     unset($fields['wanneer_wil_je_meehelpen']);
     unset($fields['ik_ga_akkoord_met_het_reglement']);

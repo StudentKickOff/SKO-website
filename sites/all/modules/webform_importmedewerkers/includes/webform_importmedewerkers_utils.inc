@@ -10,7 +10,7 @@ function _webform_importmedewerkers_process_shifts(&$shifts) {
 
         if(strpos($shift, ' ') === false) {
             // Showday. Input: xxuyy-zzuaa
-            $shifts[$i] = "2013-09-25_" . $splitted[0] . ":" . $splitted[1];
+            $shifts[$i] = "2014-09-24_" . $splitted[0] . ":" . $splitted[1];
         } else {
             // Non showday. Input: dd-MM-yyyy hh:mm
             $shifts[$i] = $splitted[2] . "-" . $splitted[1] . "-" . $splitted[0] . "_" . $splitted[3] . ":" . $splitted[4];
