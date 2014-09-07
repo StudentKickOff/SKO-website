@@ -7,15 +7,13 @@ function _webform_importmedewerkers_process_solo($node, $submission) {
         $fields[$node->webform['components'][$key]['form_key']] = $value;
     }
 
-    dpm($fields);
     _webform_importmedewerkers_filter_fields($fields);
     _webform_importmedewerkers_process_shifts($fields['shiften']);
     _webform_importmedewerkers_normalize_fields($fields);
     $query = _webform_importmedewerkers_build_query($fields);
-    dpm($query);
 
     // We pass the submission and fields here too for logging
-    /* _webform_importmedewerkers_send_api_request($query, $submission, $fields); */
+    _webform_importmedewerkers_send_api_request($query, $submission, $fields);
 }
 
 function _webform_importmedewerkers_normalize_fields(&$fields) {
@@ -33,7 +31,7 @@ function _webform_importmedewerkers_normalize_fields(&$fields) {
     $fields['voorkeur'] = (isset($fields['voorkeur'])) ? $fields['voorkeur'][0] : "";
 
     $fields['akkoordvoorwaarden'] = 1;
-    $fields['akkoordvoorwaardenop'] = date('d/m/Y');
+    $fields['akkoordvoorwaardenop'] = date('Y-m-d');
 }
 
 

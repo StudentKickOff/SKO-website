@@ -71,7 +71,7 @@ function _webform_importmedewerkers_build_query(&$fields) {
         . "&verantwoordelijkeVereniging=" .   toAscii($fields['verantwoordelijkeVereniging'])
         . "&shiften=" .                       implode(',', $fields['shiften'])
         . "&akkoordvoorwaarden=" .            toAscii($fields['akkoordvoorwaarden'])
-        . "&akkoordvoorwaardenop=" .          toAscii($fields['akkoordvoorwaardenop'])
+        . "&akkoordvoorwaardenOp=" .          toAscii($fields['akkoordvoorwaardenop'])
     ;
 }
 
