@@ -5,11 +5,10 @@ function _webform_importmedewerkers_process_group($node, $submission) {
     $members = $submission->data;
     _webform_importmedewerkers_filter_fields($members);
 
-    dpm($members);
 
     foreach($members as $member) {
-        /* $query = _webform_importmedewerkers_build_query($member); */
-        /* _webform_importmedewerkers_send_api_request($query, $submission, $member); */
+        $query = _webform_importmedewerkers_build_query($member);
+        _webform_importmedewerkers_send_api_request($query, $submission, $member);
     }
 }
 
@@ -46,10 +45,10 @@ function _webform_importmedewerkers_filter_fields(&$members) {
     unset($members[28]);
 
     $members = array_filter($members, "_webform_importmedewerkers_filter_empty");
-    $members = array_chunk($members, 7);
+    $members = array_chunk($members, 13);
 
     // Nicer names
-    $new_keys = array("voornaam", "familienaam", "geboortedatum", "e_mail", "onderwijsinstelling", "maat_t_shirt", "rijbewijs");
+    $new_keys = array("voornaam", "familienaam", "geboortedatum", "adres", "postcode", "gemeente", "rijksregisternummer", "id_kaart_nummer", "e_mail", "onderwijsinstelling", "maat_t_shirt", "tapervaring", "rijbewijs");
     foreach($members as $key => $value) {
         foreach($value as $field_key => $field_value) {
             $value[$new_keys[$field_key]] = $field_value;
@@ -65,6 +64,9 @@ function _webform_importmedewerkers_filter_fields(&$members) {
             $value["verantwoordelijkeVereniging"] = 0;
             $value["gsm_nummer"] = array("");
         }
+
+        $value['opmerkingen'][0] .= "\nBarervaring: " . $value['tapervaring'][0];
+        unset($value['tapervaring']);
 
         _webform_importmedewerkers_normalize_fields($value);
 
