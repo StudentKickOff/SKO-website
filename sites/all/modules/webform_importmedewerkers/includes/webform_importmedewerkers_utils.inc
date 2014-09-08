@@ -70,8 +70,6 @@ function _webform_importmedewerkers_build_query(&$fields) {
         . "&vereniging=" .                    toAscii($fields['vereniging'])
         . "&verantwoordelijkeVereniging=" .   toAscii($fields['verantwoordelijkeVereniging'])
         . "&shiften=" .                       implode(',', $fields['shiften'])
-        . "&akkoordvoorwaarden=" .            toAscii($fields['akkoordvoorwaarden'])
-        . "&akkoordvoorwaardenOp=" .          toAscii($fields['akkoordvoorwaardenop'])
     ;
 }
 

@@ -29,9 +29,6 @@ function _webform_importmedewerkers_normalize_fields(&$fields) {
     $fields['verantwoordelijkeVereniging'] = "0";
 
     $fields['voorkeur'] = (isset($fields['voorkeur'])) ? $fields['voorkeur'][0] : "";
-
-    $fields['akkoordvoorwaarden'] = 1;
-    $fields['akkoordvoorwaardenop'] = date('Y-m-d');
 }
 
 
