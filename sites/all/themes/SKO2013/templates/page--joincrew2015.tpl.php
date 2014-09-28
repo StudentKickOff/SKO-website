@@ -26,7 +26,7 @@
                   print drupal_render(node_view(node_load($nid)));
                 ?>
 
-                <div class="crew-form">
+                <div class="node crew-form">
                   <?php
                     $block = module_invoke('webform', 'block_view', 'client-block-358');
                     print $block['content'];
