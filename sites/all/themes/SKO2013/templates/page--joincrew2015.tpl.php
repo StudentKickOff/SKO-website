@@ -24,10 +24,14 @@
                 <?php
                   $nid = 361;
                   print drupal_render(node_view(node_load($nid)));
-
-                  $block = module_invoke('webform', 'block_view', 'client-block-358');
-                  print $block['content'];
                 ?>
+
+                <div class="crew-form">
+                  <?php
+                    $block = module_invoke('webform', 'block_view', 'client-block-358');
+                    print $block['content'];
+                  ?>
+                </div>
             </div>
             <div class="student-village-container column white-background column-no-padding">
                 <h1>Teams 2015</h1>
