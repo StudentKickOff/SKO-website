@@ -26,7 +26,7 @@
                   print drupal_render(node_view(node_load($nid)));
                 ?>
 
-                <h1>Schrijf je hier in!</h1>
+                <h1>Laat hier je gegevens achter!</h1>
                 <div class="node crew-form">
                   <?php
                     $block = module_invoke('webform', 'block_view', 'client-block-358');
