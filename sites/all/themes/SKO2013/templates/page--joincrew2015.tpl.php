@@ -19,7 +19,7 @@
        <div class="two-columns">
             <div class="column white-background column-no-padding">
                 <div class="detail-full-width-image">
-                    <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/studentvillage-header.jpg" />
+                    <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/rekrutering-header.jpg" />
                 </div>
                 <?php
                 $nid = 361;
