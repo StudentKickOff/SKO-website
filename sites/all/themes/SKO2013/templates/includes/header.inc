@@ -9,10 +9,10 @@
                     because display:inline-block will add whitespace otherwise-->
                 <li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Nieuws") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Home', '<front>', array('attributes' => array('class' => array('site-navigation-home')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Line-up") ? "site-navigation-current" : ""; ?>">
-                    <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('site-navigation-line-up')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Studentvillage") ? "site-navigation-current" : ""; ?>">
-                    <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('site-navigation-student-village')))); ?>
+                <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Line-up") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('site-navigation-line-up')))); ?>-->
+                <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Studentvillage") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('site-navigation-student-village')))); ?>-->
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Info") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Info', 'info', array('attributes' => array('class' => array('site-navigation-praktisch')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Historiek") ? "site-navigation-current" : ""; ?>">
@@ -21,6 +21,8 @@
                     <?php print l('SRR', 'studentrockrally', array('attributes' => array('class' => array('site-navigation-student-rock-rally')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Korting") ? "site-navigation-current" : ""; ?>">
                     <?php print l('SKO Card', 'skocard', array('attributes' => array('class' => array('site-navigation-korting')))); ?>
+                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Join") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Join', 'join', array('attributes' => array('class' => array('site-navigation-join')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item" id="nav-toggle"><a href="#">&equiv;</a></li>
             </ul>
         </nav>
