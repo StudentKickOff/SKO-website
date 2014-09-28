@@ -25,8 +25,8 @@
                   $nid = 361;
                   print drupal_render(node_view(node_load($nid)));
 
-                  $block = block_load('views', 'client-block-358');
-                  print render(_block_get_renderable_array(_block_render_blocks(array($block))));
+                  $block = module_invoke('webform', 'block_view', 'client-block-358');
+                  print $block['content'];
                 ?>
             </div>
             <div class="student-village-container column white-background column-no-padding">
