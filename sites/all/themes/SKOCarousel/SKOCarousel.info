@@ -1,0 +1,18 @@
+name = SKOCarousel
+description = A flexible, recolorable theme with many regions.
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = assets/css/bootstrap.min.css
+stylesheets[all][] = assets/css/bootstrap.theme.min.css
+stylesheets[all][] = assets/css/sko.css
+
+scripts[] = assets/js/jquery-migrate-1.2.1.js
+scripts[] = assets/js/bootstrap.js
+scripts[] = assets/js/jquery.carousel.fullscreen.js
+
+; Information added by drupal.org packaging script on 2013-04-03
+version = "7.0-dev"
+project = "drupal"
+datestamp = "1365027012"

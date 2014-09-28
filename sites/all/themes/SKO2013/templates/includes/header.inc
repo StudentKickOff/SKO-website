@@ -8,7 +8,7 @@
                 <!--</li> and starting <li> have to be on the same line
                     because display:inline-block will add whitespace otherwise-->
                 <li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Nieuws") ? "site-navigation-current" : ""; ?>">
-                    <?php print l('Home', '<front>', array('attributes' => array('class' => array('site-navigation-home')))); ?>
+                    <?php print l('Home', 'home', array('attributes' => array('class' => array('site-navigation-home')))); ?>
                 <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Line-up") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('site-navigation-line-up')))); ?>-->
                 <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Studentvillage") ? "site-navigation-current" : ""; ?>">
