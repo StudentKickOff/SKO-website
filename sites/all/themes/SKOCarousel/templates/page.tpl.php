@@ -54,7 +54,7 @@
 
       <span><p class="title">THIS WAS STUDENT KICK-OFF 2014</p></span>
       <span><p class="subtitle">
-        <?php print l('go to website', 'home'); ?> |
+        <?php print l('go to website', 'historiek'); ?> |
         <?php print l('join the awesome crew', 'join', array('attributes' => array('style' => array('color:#f3b006')))); ?>
       </p></span>
     </div>
