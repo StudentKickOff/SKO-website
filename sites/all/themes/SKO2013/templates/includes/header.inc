@@ -13,12 +13,12 @@
                     <?php print l('Line-up', 'line-up', array('attributes' => array('class' => array('site-navigation-line-up')))); ?>-->
                 <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Studentvillage") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Student village', 'studentvillage', array('attributes' => array('class' => array('site-navigation-student-village')))); ?>-->
-                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Info") ? "site-navigation-current" : ""; ?>">
-                    <?php print l('Info', 'info', array('attributes' => array('class' => array('site-navigation-praktisch')))); ?>
+                <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Info") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('Info', 'info', array('attributes' => array('class' => array('site-navigation-praktisch')))); ?>-->
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Historiek") ? "site-navigation-current" : ""; ?>">
                     <?php print l('Historiek', 'historiek', array('attributes' => array('class' => array('site-navigation-historiek')))); ?>
-                </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Student Rock Rally") ? "site-navigation-current" : ""; ?>">
-                    <?php print l('SRR', 'studentrockrally', array('attributes' => array('class' => array('site-navigation-student-rock-rally')))); ?>
+                <!-- </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Student Rock Rally") ? "site-navigation-current" : ""; ?>">
+                    <?php print l('SRR', 'studentrockrally', array('attributes' => array('class' => array('site-navigation-student-rock-rally')))); ?>-->
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Korting") ? "site-navigation-current" : ""; ?>">
                     <?php print l('SKO Card', 'skocard', array('attributes' => array('class' => array('site-navigation-korting')))); ?>
                 </li><li class="horizontal-navigation-item site-navigation-item <?php print ($title == "Join") ? "site-navigation-current" : ""; ?>">
