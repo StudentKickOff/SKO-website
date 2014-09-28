@@ -22,8 +22,11 @@
                     <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/rekrutering-header.jpg" />
                 </div>
                 <?php
-                $nid = 361;
-                print drupal_render(node_view(node_load($nid)));
+                  $nid = 361;
+                  print drupal_render(node_view(node_load($nid)));
+
+                  $block = block_load('views', 'client-block-358');
+                  print render(_block_get_renderable_array(_block_render_blocks(array($block))));
                 ?>
             </div>
             <div class="student-village-container column white-background column-no-padding">
