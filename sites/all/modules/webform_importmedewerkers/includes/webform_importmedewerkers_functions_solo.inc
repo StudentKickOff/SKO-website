@@ -20,6 +20,10 @@ function _webform_importmedewerkers_normalize_fields(&$fields) {
     // Rijbewijs ja/nee -> 0/1
     $fields['rijbewijs'] = ($fields['rijbewijs'][0] == "ja") ? "1" : "0";
 
+    // Add tapervaring to opmerkingen
+    $fields['opmerkingen'][0] .= "\nBarervaring: " . $fields['barervaring'][0];
+    unset($fields['barervaring']);
+
     // Add empty fields
     $fields['vereniging'] = "";
     $fields['verantwoordelijkeVereniging'] = "0";

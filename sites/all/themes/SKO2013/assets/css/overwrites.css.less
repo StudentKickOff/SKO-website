@@ -223,6 +223,14 @@ html[xmlns] .slides {display: block;}
 .no-js .slides > li:first-child {display: block;}
 
 .toboggan-unified {
+
+  #login-message::before {
+    display: block;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    content: 'Korting een jaar lang, gewoon op vertoon van de kaart!\ALog in om je SKO Card te activeren. Heb je nog geen Student Kick-Off Card? Vraag ze bij een lid van de organisatie!';
+  }
+
   .login-message {
     font-family: 'League Gothic';
     font-weight: normal;
@@ -253,4 +261,26 @@ html[xmlns] .slides {display: block;}
         background-color: lighten(#2d96e7, 4%);
     }
   }
+}
+
+.crew-form {
+    padding: 15px;
+
+    .webform-client-form {
+        input.select-or-other-other {
+            margin-left: 0px !important;
+        }
+
+        .form-item {
+            label {
+                display: inline-block;
+                text-align: left !important;
+                width: 100% !important;
+            }
+        }
+    }
+
+    .form-actions {
+        text-align: left !important;
+    }
 }

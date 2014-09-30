@@ -1,4 +1,4 @@
-<article class="white-background detail-full-item history-item">
+<article class="white-background detail-full-item history-item-expanded">
     <a href="#" class="history-item-toggle"><?php print $title; ?></a>
     <div class="detail-container">
         <aside class="detail-side">

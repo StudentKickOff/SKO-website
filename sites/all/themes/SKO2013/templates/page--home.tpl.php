@@ -13,6 +13,9 @@
                 <a href="#" class="slider-previous-arrow">Previous</a>
                 <a href="#" class="slider-next-arrow">Next</a>
             </div>
+            <br />
+            <br />
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?autoplay=false&playlist=false&width=657&height=80&cover=true&type=playlist&id=986602821&title=&app_id=undefined" width="657" height="80"></iframe>
         </div>
         <aside class="sidebar-closer">
             <h2><a href="content/partners">Onze partners</a></h2>

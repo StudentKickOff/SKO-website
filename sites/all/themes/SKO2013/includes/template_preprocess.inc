@@ -14,7 +14,7 @@ function SKO2013_preprocess_html(&$vars) {
 // Nonfront css for nonfront pages
 function SKO2013_preprocess_page(&$variables, $hook) {
 
-    if (arg(0) != 'frontpage') {
+    if (arg(0) != 'home') {
         drupal_add_css(path_to_theme() . '/assets/css/nonfront.css.less', array('group' => CSS_THEME, 'weight' => 115, 'browsers' => array('IE' => 1, '!IE' => 1), 'preprocess' => FALSE));
     }
 }
