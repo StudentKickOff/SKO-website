@@ -26,7 +26,7 @@
         <div class="item">
           <img src="<?php print $base_path . path_to_theme(); ?>/assets/img/IM3.jpg" />
         </div>
-        <div class="item active">
+        <div class="item">
           <img src="<?php print $base_path . path_to_theme(); ?>/assets/img/IM2.jpg" />
         </div>
         <div class="item">
