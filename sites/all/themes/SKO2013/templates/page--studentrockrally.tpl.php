@@ -20,7 +20,7 @@
             <div class="column column-no-padding">
                <div class="white-background">
                   <div class="detail-full-width-image">
-                      <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/srr-header.jpg" />
+                      <img src="<?php print $base_path . path_to_theme(); ?>/assets/images/srr-header-2015.png" />
                   </div>
                   <?php
                   $nid = 213;
